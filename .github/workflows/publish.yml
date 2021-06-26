@@ -2,12 +2,8 @@
 
 name: Publish
 on :
-pull_request:
-branches: [release : main ]
-types: [created]
+  workflow_dispatch:
 
-
-on:
   push:
     branches: [ main ]
     tags:
