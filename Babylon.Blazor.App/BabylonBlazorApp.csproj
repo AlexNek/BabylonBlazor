@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Balylon.Blazor.Lib\Babylon.Blazor.csproj" />
+    <ProjectReference Include="..\Babylon.Blazor.Lib\Babylon.Blazor.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Balylon.Blazor.Lib\Babylon.Blazor.csproj" />
+    <ProjectReference Include="..\Babylon.Blazor.Lib\Babylon.Blazor.csproj" />
   </ItemGroup>
 
 </Project>
