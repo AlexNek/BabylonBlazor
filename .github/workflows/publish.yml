@@ -1,0 +1,38 @@
+# This is a public workflow 
+
+name: Publish
+on :
+pull_request:
+branches: [release : main ]
+types: [created]
+
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.201
+      - name: Build with dotnet
+        run: dotnet build --configuration Release
+      - name: Test with dotnet
+        run: dotnet test
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Pack nuget package
+        run: dotnet pack ./Babylon.Blazor.Lib/Babylon.Blazor.csproj --configuration Release
+        env:
+          MSBUILDSINGLELOADCONTEXT: 1
+      - name: Push package to nuget
+        run: dotnet nuget push **/*.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate -n true
