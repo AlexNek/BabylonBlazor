@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Pack nuget package
-        run: dotnet pack ./Babylon.Blazor.Lib/Babylon.Blazor.csproj --configuration Release
+        run: dotnet pack /Babylon.Blazor.Lib/Babylon.Blazor.csproj --configuration Release
         env:
           MSBUILDSINGLELOADCONTEXT: 1
       - name: Push package to nuget
