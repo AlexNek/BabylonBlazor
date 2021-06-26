@@ -97,12 +97,16 @@ As I not found atom size into description - I not set it. The same is for double
 If chemist sees something wrong then tell me, please. My target was to create C# interface to Java script library. Not to draw molecules absolute correctly.
 
 Water  H<sub>2</sub>O
-![--water pic--](docs/images/water.png)
-Benzene  C<sub>6</sub>H<sub>6</sub>
-![--Benzene pic--](docs/images/benzene.png)
-Epinephrine C<sub>9</sub>H<sub>13</sub>NO<sub>3</sub>
-![--Epinephrine pic--](docs/images/epinephrine.png)
 
+![--water pic--](docs/images/water.png)
+
+Benzene  C<sub>6</sub>H<sub>6</sub>
+
+![--Benzene pic--](docs/images/benzene.png)
+
+Epinephrine C<sub>9</sub>H<sub>13</sub>NO<sub>3</sub>
+
+![--Epinephrine pic--](docs/images/epinephrine.png)
 
 
 In addition I draw some tests
