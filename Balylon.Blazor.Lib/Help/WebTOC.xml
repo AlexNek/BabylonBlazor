@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="ad9ad3ed-09db-4902-8d1d-eab6d57962ec" Title="Babylon.Blazor Namespace" Url="html/N-Babylon.Blazor.htm">
+    <HelpTOCNode Id="0955f145-a2be-4c28-a551-310ec408b693" Title="BabylonCanvasBase Class" Url="html/T-Babylon.Blazor.BabylonCanvasBase.htm">
+      <HelpTOCNode Title="BabylonCanvasBase Members" Url="html/AllMembers.T-Babylon.Blazor.BabylonCanvasBase.htm" />
+      <HelpTOCNode Title="BabylonCanvasBase Methods" Url="html/Methods.T-Babylon.Blazor.BabylonCanvasBase.htm" />
+      <HelpTOCNode Id="506d9878-dda0-4600-951c-68bab20460c5" Title="BabylonCanvasBase Properties" Url="html/Properties.T-Babylon.Blazor.BabylonCanvasBase.htm">
+        <HelpTOCNode Title="CanvasId Property " Url="html/P-Babylon.Blazor.BabylonCanvasBase.CanvasId.htm" />
+        <HelpTOCNode Title="ChemicalData Property " Url="html/P-Babylon.Blazor.BabylonCanvasBase.ChemicalData.htm" />
+        <HelpTOCNode Title="IdleRotationSpeed Property " Url="html/P-Babylon.Blazor.BabylonCanvasBase.IdleRotationSpeed.htm" />
+        <HelpTOCNode Title="UseAutoRotate Property " Url="html/P-Babylon.Blazor.BabylonCanvasBase.UseAutoRotate.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="28d3687f-8bd1-47ce-aa06-9643f3d4fcea" Title="BabylonInstance Class" Url="html/T-Babylon.Blazor.BabylonInstance.htm">
+      <HelpTOCNode Title="BabylonInstance Members" Url="html/AllMembers.T-Babylon.Blazor.BabylonInstance.htm" />
+      <HelpTOCNode Title="BabylonInstance Constructor " Url="html/M-Babylon.Blazor.BabylonInstance.-ctor.htm" />
+      <HelpTOCNode Id="65531837-cc40-45b7-8b7d-b79e6acbf808" Title="BabylonInstance Methods" Url="html/Methods.T-Babylon.Blazor.BabylonInstance.htm">
+        <HelpTOCNode Title="CreateColor3 Method " Url="html/M-Babylon.Blazor.BabylonInstance.CreateColor3.htm" />
+        <HelpTOCNode Title="CreateEngine Method " Url="html/M-Babylon.Blazor.BabylonInstance.CreateEngine.htm" />
+        <HelpTOCNode Title="CreateGrid Method " Url="html/M-Babylon.Blazor.BabylonInstance.CreateGrid.htm" />
+        <HelpTOCNode Title="CreateTestScene Method " Url="html/M-Babylon.Blazor.BabylonInstance.CreateTestScene.htm" />
+        <HelpTOCNode Title="CreateVector3 Method " Url="html/M-Babylon.Blazor.BabylonInstance.CreateVector3.htm" />
+        <HelpTOCNode Title="Dispose Method " Url="html/M-Babylon.Blazor.BabylonInstance.Dispose.htm" />
+        <HelpTOCNode Title="RunRenderLoop Method " Url="html/M-Babylon.Blazor.BabylonInstance.RunRenderLoop.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="d192c0fe-0187-48ee-9942-287588d57b5a" Title="ExampleJsInterop Class" Url="html/T-Babylon.Blazor.ExampleJsInterop.htm">
+      <HelpTOCNode Title="ExampleJsInterop Members" Url="html/AllMembers.T-Babylon.Blazor.ExampleJsInterop.htm" />
+      <HelpTOCNode Title="ExampleJsInterop Constructor " Url="html/M-Babylon.Blazor.ExampleJsInterop.-ctor.htm" />
+      <HelpTOCNode Id="b5cf1a40-fd03-4602-9db9-6aefa421c4f6" Title="ExampleJsInterop Methods" Url="html/Methods.T-Babylon.Blazor.ExampleJsInterop.htm">
+        <HelpTOCNode Title="Display Method " Url="html/M-Babylon.Blazor.ExampleJsInterop.Display.htm" />
+        <HelpTOCNode Title="DisposeAsync Method " Url="html/M-Babylon.Blazor.ExampleJsInterop.DisposeAsync.htm" />
+        <HelpTOCNode Title="Log Method " Url="html/M-Babylon.Blazor.ExampleJsInterop.Log.htm" />
+        <HelpTOCNode Title="Prompt Method " Url="html/M-Babylon.Blazor.ExampleJsInterop.Prompt.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="bc86bf9b-b24a-4691-ad6c-985115bd49d7" Title="IData Interface" Url="html/T-Babylon.Blazor.IData.htm">
+      <HelpTOCNode Title="IData Methods" Url="html/Methods.T-Babylon.Blazor.IData.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="c0ee1637-05ea-4277-870e-2ef543f3492c" Title="InstanceCreator Class" Url="html/T-Babylon.Blazor.InstanceCreator.htm">
+      <HelpTOCNode Title="InstanceCreator Members" Url="html/AllMembers.T-Babylon.Blazor.InstanceCreator.htm" />
+      <HelpTOCNode Title="InstanceCreator Constructor " Url="html/M-Babylon.Blazor.InstanceCreator.-ctor.htm" />
+      <HelpTOCNode Id="a3f49168-c385-4dd5-9667-59b381f336d2" Title="InstanceCreator Methods" Url="html/Methods.T-Babylon.Blazor.InstanceCreator.htm">
+        <HelpTOCNode Title="CreateBabylonAsync Method " Url="html/M-Babylon.Blazor.InstanceCreator.CreateBabylonAsync.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="683051c4-f587-48bb-ab22-bcd3fda19cd9" Title="SceneCreator Class" Url="html/T-Babylon.Blazor.SceneCreator.htm">
+      <HelpTOCNode Title="SceneCreator Members" Url="html/AllMembers.T-Babylon.Blazor.SceneCreator.htm" />
+      <HelpTOCNode Id="20cb99b3-e4cf-4eac-8a2c-d65d248ed6a3" Title="SceneCreator Methods" Url="html/Methods.T-Babylon.Blazor.SceneCreator.htm">
+        <HelpTOCNode Title="CreateAsync Method " Url="html/M-Babylon.Blazor.SceneCreator.CreateAsync.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="e8e9d5cd-bcdc-4687-bc99-6d0f58b0b583" Title="Babylon.Blazor.Babylon Namespace" Url="html/N-Babylon.Blazor.Babylon.htm">
+    <HelpTOCNode Id="4d27345a-06ad-4b36-9bd0-cdc15ee6af8a" Title="ArcRotateCamera Class" Url="html/T-Babylon.Blazor.Babylon.ArcRotateCamera.htm">
+      <HelpTOCNode Title="ArcRotateCamera Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.ArcRotateCamera.htm" />
+      <HelpTOCNode Title="ArcRotateCamera Constructor " Url="html/M-Babylon.Blazor.Babylon.ArcRotateCamera.-ctor.htm" />
+      <HelpTOCNode Id="dd219156-a9fd-4fc3-9386-3d5f15dc76d5" Title="ArcRotateCamera Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.ArcRotateCamera.htm">
+        <HelpTOCNode Title="SetAutoRotate Method " Url="html/M-Babylon.Blazor.Babylon.ArcRotateCamera.SetAutoRotate.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ca81239d-d1a9-491d-b2b5-b2d0bea8837f" Title="ArcRotateCamera Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.ArcRotateCamera.htm">
+        <HelpTOCNode Title="BabylonInstance Property " Url="html/P-Babylon.Blazor.Babylon.ArcRotateCamera.BabylonInstance.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="9a9df119-141a-4976-881c-efcd339813ac" Title="BabylonObject Class" Url="html/T-Babylon.Blazor.Babylon.BabylonObject.htm">
+      <HelpTOCNode Title="BabylonObject Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.BabylonObject.htm" />
+      <HelpTOCNode Title="BabylonObject Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.BabylonObject.htm" />
+      <HelpTOCNode Id="82a30d28-c2e2-4984-a44e-07df29296cdc" Title="BabylonObject Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.BabylonObject.htm">
+        <HelpTOCNode Title="JsObjRef Property " Url="html/P-Babylon.Blazor.Babylon.BabylonObject.JsObjRef.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="189030cb-8f30-4229-9ecc-dd524ef74011" Title="Color3 Class" Url="html/T-Babylon.Blazor.Babylon.Color3.htm">
+      <HelpTOCNode Title="Color3 Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Color3.htm" />
+      <HelpTOCNode Title="Color3 Constructor " Url="html/M-Babylon.Blazor.Babylon.Color3.-ctor.htm" />
+      <HelpTOCNode Title="Color3 Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Color3.htm" />
+      <HelpTOCNode Title="Color3 Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Color3.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="e42b921b-7191-417d-a093-4b5446842f5a" Title="DynamicTexture Class" Url="html/T-Babylon.Blazor.Babylon.DynamicTexture.htm">
+      <HelpTOCNode Title="DynamicTexture Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.DynamicTexture.htm" />
+      <HelpTOCNode Title="DynamicTexture Constructor " Url="html/M-Babylon.Blazor.Babylon.DynamicTexture.-ctor.htm" />
+      <HelpTOCNode Title="DynamicTexture Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.DynamicTexture.htm" />
+      <HelpTOCNode Title="DynamicTexture Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.DynamicTexture.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="4df531fb-4a71-4b32-8000-08acd03b8419" Title="Engine Class" Url="html/T-Babylon.Blazor.Babylon.Engine.htm">
+      <HelpTOCNode Title="Engine Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Engine.htm" />
+      <HelpTOCNode Title="Engine Constructor " Url="html/M-Babylon.Blazor.Babylon.Engine.-ctor.htm" />
+      <HelpTOCNode Id="24174dad-fcc3-454b-b896-5027696f8d65" Title="Engine Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Engine.htm">
+        <HelpTOCNode Title="CreateScene Method " Url="html/M-Babylon.Blazor.Babylon.Engine.CreateScene.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d76327bd-dc94-4e90-9ba8-f34421982d92" Title="Engine Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Engine.htm">
+        <HelpTOCNode Title="BabylonInstance Property " Url="html/P-Babylon.Blazor.Babylon.Engine.BabylonInstance.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1a054484-47c9-4ec5-983a-3b2bf76f67bb" Title="HemisphericLight Class" Url="html/T-Babylon.Blazor.Babylon.HemisphericLight.htm">
+      <HelpTOCNode Title="HemisphericLight Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.HemisphericLight.htm" />
+      <HelpTOCNode Title="HemisphericLight Constructor " Url="html/M-Babylon.Blazor.Babylon.HemisphericLight.-ctor.htm" />
+      <HelpTOCNode Title="HemisphericLight Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.HemisphericLight.htm" />
+      <HelpTOCNode Title="HemisphericLight Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.HemisphericLight.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="9fa70478-c77c-4f8e-89ff-d8cbd722f4db" Title="Material Class" Url="html/T-Babylon.Blazor.Babylon.Material.htm">
+      <HelpTOCNode Title="Material Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Material.htm" />
+      <HelpTOCNode Title="Material Constructor " Url="html/M-Babylon.Blazor.Babylon.Material.-ctor.htm" />
+      <HelpTOCNode Id="e628d9f7-8fe1-4f8a-a4ff-a0a81577fbda" Title="Material Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Material.htm">
+        <HelpTOCNode Title="SetTexture Method " Url="html/M-Babylon.Blazor.Babylon.Material.SetTexture.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="1f633de4-b7c8-4362-86d6-6e7874d8ee32" Title="Material Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Material.htm">
+        <HelpTOCNode Title="BabylonInstance Property " Url="html/P-Babylon.Blazor.Babylon.Material.BabylonInstance.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="962ca869-35a3-4f80-bccd-394dbbceefe2" Title="Mesh Class" Url="html/T-Babylon.Blazor.Babylon.Mesh.htm">
+      <HelpTOCNode Title="Mesh Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Mesh.htm" />
+      <HelpTOCNode Title="Mesh Constructor " Url="html/M-Babylon.Blazor.Babylon.Mesh.-ctor.htm" />
+      <HelpTOCNode Id="fe6c5259-de7e-403f-bd61-7c5f017cb277" Title="Mesh Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Mesh.htm">
+        <HelpTOCNode Title="SetMaterial Method " Url="html/M-Babylon.Blazor.Babylon.Mesh.SetMaterial.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="916ecf08-e9ac-42a1-9fa3-5c3ba40393c0" Title="Mesh Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Mesh.htm">
+        <HelpTOCNode Title="BabylonInstance Property " Url="html/P-Babylon.Blazor.Babylon.Mesh.BabylonInstance.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="03cbd2cc-d9cb-4933-b72b-f69a59ac6a8a" Title="PointLight Class" Url="html/T-Babylon.Blazor.Babylon.PointLight.htm">
+      <HelpTOCNode Title="PointLight Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.PointLight.htm" />
+      <HelpTOCNode Title="PointLight Constructor " Url="html/M-Babylon.Blazor.Babylon.PointLight.-ctor.htm" />
+      <HelpTOCNode Title="PointLight Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.PointLight.htm" />
+      <HelpTOCNode Title="PointLight Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.PointLight.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="08fa107b-6680-4fb7-a10f-d6f3575892aa" Title="Scene Class" Url="html/T-Babylon.Blazor.Babylon.Scene.htm">
+      <HelpTOCNode Title="Scene Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Scene.htm" />
+      <HelpTOCNode Title="Scene Constructor " Url="html/M-Babylon.Blazor.Babylon.Scene.-ctor.htm" />
+      <HelpTOCNode Id="a2833632-dfcf-4f01-8f1d-0a740bd49598" Title="Scene Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Scene.htm">
+        <HelpTOCNode Title="CreateArcRotateCamera Method " Url="html/M-Babylon.Blazor.Babylon.Scene.CreateArcRotateCamera.htm" />
+        <HelpTOCNode Title="CreateCylinder Method " Url="html/M-Babylon.Blazor.Babylon.Scene.CreateCylinder.htm" />
+        <HelpTOCNode Title="CreateDynamicTexture Method " Url="html/M-Babylon.Blazor.Babylon.Scene.CreateDynamicTexture.htm" />
+        <HelpTOCNode Title="CreateHemispehericLight Method " Url="html/M-Babylon.Blazor.Babylon.Scene.CreateHemispehericLight.htm" />
+        <HelpTOCNode Title="CreateMaterial Method " Url="html/M-Babylon.Blazor.Babylon.Scene.CreateMaterial.htm" />
+        <HelpTOCNode Title="CreatePointLight Method " Url="html/M-Babylon.Blazor.Babylon.Scene.CreatePointLight.htm" />
+        <HelpTOCNode Title="CreateSphere Method " Url="html/M-Babylon.Blazor.Babylon.Scene.CreateSphere.htm" />
+        <HelpTOCNode Title="CreateTextPlane Method " Url="html/M-Babylon.Blazor.Babylon.Scene.CreateTextPlane.htm" />
+        <HelpTOCNode Title="CreateTube Method " Url="html/M-Babylon.Blazor.Babylon.Scene.CreateTube.htm" />
+        <HelpTOCNode Title="ShowWorldAxis Method " Url="html/M-Babylon.Blazor.Babylon.Scene.ShowWorldAxis.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="dce53461-e88a-4aba-ba29-80a0f16e0c60" Title="Scene Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Scene.htm">
+        <HelpTOCNode Title="BabylonInstance Property " Url="html/P-Babylon.Blazor.Babylon.Scene.BabylonInstance.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="912ad4ca-c689-4af7-9956-45db34d8b944" Title="Tools Class" Url="html/T-Babylon.Blazor.Babylon.Tools.htm">
+      <HelpTOCNode Title="Tools Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Tools.htm" />
+      <HelpTOCNode Id="fe1f802c-2f2f-4398-88eb-8c77cb0208ad" Title="Tools Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Tools.htm">
+        <HelpTOCNode Title="GradToRadian Method " Url="html/M-Babylon.Blazor.Babylon.Tools.GradToRadian.htm" />
+        <HelpTOCNode Title="HlsToRgb Method " Url="html/M-Babylon.Blazor.Babylon.Tools.HlsToRgb.htm" />
+        <HelpTOCNode Title="RadianToGrad Method " Url="html/M-Babylon.Blazor.Babylon.Tools.RadianToGrad.htm" />
+        <HelpTOCNode Title="RectangularTriangleSolutionAngle Method " Url="html/M-Babylon.Blazor.Babylon.Tools.RectangularTriangleSolutionAngle.htm" />
+        <HelpTOCNode Title="RectangularTriangleSolutions Method " Url="html/M-Babylon.Blazor.Babylon.Tools.RectangularTriangleSolutions.htm" />
+        <HelpTOCNode Title="RgbToHls Method " Url="html/M-Babylon.Blazor.Babylon.Tools.RgbToHls.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="32c30b62-0e6a-4dae-9774-09ce2487de18" Title="Vector3 Class" Url="html/T-Babylon.Blazor.Babylon.Vector3.htm">
+      <HelpTOCNode Title="Vector3 Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Vector3.htm" />
+      <HelpTOCNode Title="Vector3 Constructor " Url="html/M-Babylon.Blazor.Babylon.Vector3.-ctor.htm" />
+      <HelpTOCNode Title="Vector3 Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Vector3.htm" />
+      <HelpTOCNode Title="Vector3 Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Vector3.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="acbdb1c8-1deb-44bd-82d3-2940e07f0e7d" Title="Babylon.Blazor.Babylon.Parameters Namespace" Url="html/N-Babylon.Blazor.Babylon.Parameters.htm">
+    <HelpTOCNode Id="50a0b146-1b7a-4bd7-83d1-b6018924e5db" Title="CylinderOptions Class" Url="html/T-Babylon.Blazor.Babylon.Parameters.CylinderOptions.htm">
+      <HelpTOCNode Title="CylinderOptions Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Parameters.CylinderOptions.htm" />
+      <HelpTOCNode Title="CylinderOptions Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Parameters.CylinderOptions.htm" />
+      <HelpTOCNode Id="0bcb7a10-d880-4adc-83ce-459e196a046b" Title="CylinderOptions Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Parameters.CylinderOptions.htm">
+        <HelpTOCNode Title="Diameter Property " Url="html/P-Babylon.Blazor.Babylon.Parameters.CylinderOptions.Diameter.htm" />
+        <HelpTOCNode Title="Height Property " Url="html/P-Babylon.Blazor.Babylon.Parameters.CylinderOptions.Height.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b9da176e-8038-4a3e-90d3-58f72990b91c" Title="MeshParameters Class" Url="html/T-Babylon.Blazor.Babylon.Parameters.MeshParameters.htm">
+      <HelpTOCNode Title="MeshParameters Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Parameters.MeshParameters.htm" />
+      <HelpTOCNode Title="MeshParameters Constructor " Url="html/M-Babylon.Blazor.Babylon.Parameters.MeshParameters.-ctor.htm" />
+      <HelpTOCNode Id="3ed7368d-593a-4f3c-9e91-d08731d710eb" Title="MeshParameters Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Parameters.MeshParameters.htm">
+        <HelpTOCNode Title="SetPosition Method " Url="html/M-Babylon.Blazor.Babylon.Parameters.MeshParameters.SetPosition.htm" />
+        <HelpTOCNode Title="SetRotation Method " Url="html/M-Babylon.Blazor.Babylon.Parameters.MeshParameters.SetRotation.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="72856378-665c-470e-970c-521ce22061c7" Title="MeshParameters Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Parameters.MeshParameters.htm">
+        <HelpTOCNode Title="Options Property " Url="html/P-Babylon.Blazor.Babylon.Parameters.MeshParameters.Options.htm" />
+        <HelpTOCNode Title="Position Property " Url="html/P-Babylon.Blazor.Babylon.Parameters.MeshParameters.Position.htm" />
+        <HelpTOCNode Title="Rotation Property " Url="html/P-Babylon.Blazor.Babylon.Parameters.MeshParameters.Rotation.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="4ae94367-eb80-48a1-9f45-cc830c20751a" Title="Options Class" Url="html/T-Babylon.Blazor.Babylon.Parameters.Options.htm">
+      <HelpTOCNode Title="Options Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Parameters.Options.htm" />
+      <HelpTOCNode Title="Options Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Parameters.Options.htm" />
+      <HelpTOCNode Id="4274e581-9e4e-4cef-bd77-9a4235007a8f" Title="Options Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Parameters.Options.htm">
+        <HelpTOCNode Title="Data Property " Url="html/P-Babylon.Blazor.Babylon.Parameters.Options.Data.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e99af25a-5430-4c43-9d6d-9dfb80023026" Title="SphereOptions Class" Url="html/T-Babylon.Blazor.Babylon.Parameters.SphereOptions.htm">
+      <HelpTOCNode Title="SphereOptions Members" Url="html/AllMembers.T-Babylon.Blazor.Babylon.Parameters.SphereOptions.htm" />
+      <HelpTOCNode Title="SphereOptions Methods" Url="html/Methods.T-Babylon.Blazor.Babylon.Parameters.SphereOptions.htm" />
+      <HelpTOCNode Id="d150a9b5-c4d7-4b1b-9de9-e4251dda09a4" Title="SphereOptions Properties" Url="html/Properties.T-Babylon.Blazor.Babylon.Parameters.SphereOptions.htm">
+        <HelpTOCNode Title="Diameter Property " Url="html/P-Babylon.Blazor.Babylon.Parameters.SphereOptions.Diameter.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="288891ad-255b-4cbf-a88c-723e9e1ad32b" Title="Babylon.Blazor.Chemical Namespace" Url="html/N-Babylon.Blazor.Chemical.htm">
+    <HelpTOCNode Id="19bdc25e-72cd-4d14-9b1d-8087369839f6" Title="AtomDescription Class" Url="html/T-Babylon.Blazor.Chemical.AtomDescription.htm">
+      <HelpTOCNode Title="AtomDescription Members" Url="html/AllMembers.T-Babylon.Blazor.Chemical.AtomDescription.htm" />
+      <HelpTOCNode Id="6dc773ba-4107-44ac-84c1-9f5172defbd5" Title="AtomDescription Constructor " Url="html/Overload-Babylon.Blazor.Chemical.AtomDescription.-ctor.htm">
+        <HelpTOCNode Title="AtomDescription Constructor " Url="html/M-Babylon.Blazor.Chemical.AtomDescription.-ctor.htm" />
+        <HelpTOCNode Title="AtomDescription Constructor (Double, Double, Double, String)" Url="html/M-Babylon.Blazor.Chemical.AtomDescription.-ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="06dcd5d9-108e-4c0d-8f40-85ecc5c7e6f6" Title="AtomDescription Methods" Url="html/Methods.T-Babylon.Blazor.Chemical.AtomDescription.htm">
+        <HelpTOCNode Title="ToString Method " Url="html/M-Babylon.Blazor.Chemical.AtomDescription.ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e7d6f6a6-482e-408b-a7cc-007baea9d428" Title="AtomDescription Properties" Url="html/Properties.T-Babylon.Blazor.Chemical.AtomDescription.htm">
+        <HelpTOCNode Title="Name Property " Url="html/P-Babylon.Blazor.Chemical.AtomDescription.Name.htm" />
+        <HelpTOCNode Title="X Property " Url="html/P-Babylon.Blazor.Chemical.AtomDescription.X.htm" />
+        <HelpTOCNode Title="Y Property " Url="html/P-Babylon.Blazor.Chemical.AtomDescription.Y.htm" />
+        <HelpTOCNode Title="Z Property " Url="html/P-Babylon.Blazor.Chemical.AtomDescription.Z.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="b4c1a5ae-6d50-4da3-b777-ad44085d6d95" Title="AtomMapper Class" Url="html/T-Babylon.Blazor.Chemical.AtomMapper.htm">
+      <HelpTOCNode Title="AtomMapper Members" Url="html/AllMembers.T-Babylon.Blazor.Chemical.AtomMapper.htm" />
+      <HelpTOCNode Title="AtomMapper Methods" Url="html/Methods.T-Babylon.Blazor.Chemical.AtomMapper.htm" />
+      <HelpTOCNode Id="edd97d2e-36ec-4129-8cd8-0366300dd4ee" Title="AtomMapper Properties" Url="html/Properties.T-Babylon.Blazor.Chemical.AtomMapper.htm">
+        <HelpTOCNode Title="DiffuseColor Property " Url="html/P-Babylon.Blazor.Chemical.AtomMapper.DiffuseColor.htm" />
+        <HelpTOCNode Title="EmissiveColor Property " Url="html/P-Babylon.Blazor.Chemical.AtomMapper.EmissiveColor.htm" />
+        <HelpTOCNode Title="Material Property " Url="html/P-Babylon.Blazor.Chemical.AtomMapper.Material.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P-Babylon.Blazor.Chemical.AtomMapper.Name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="60519b88-941b-4c75-ba68-ccbcc9709978" Title="BondDescription Class" Url="html/T-Babylon.Blazor.Chemical.BondDescription.htm">
+      <HelpTOCNode Title="BondDescription Members" Url="html/AllMembers.T-Babylon.Blazor.Chemical.BondDescription.htm" />
+      <HelpTOCNode Title="BondDescription Constructor " Url="html/M-Babylon.Blazor.Chemical.BondDescription.-ctor.htm" />
+      <HelpTOCNode Id="a8e2fdbf-fec9-4e8c-adef-60899e6b957b" Title="BondDescription Methods" Url="html/Methods.T-Babylon.Blazor.Chemical.BondDescription.htm">
+        <HelpTOCNode Title="ToString Method " Url="html/M-Babylon.Blazor.Chemical.BondDescription.ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e52e36cf-8b1e-4e34-948f-b48f7e8161d2" Title="BondDescription Properties" Url="html/Properties.T-Babylon.Blazor.Chemical.BondDescription.htm">
+        <HelpTOCNode Title="FromAtomIndex Property " Url="html/P-Babylon.Blazor.Chemical.BondDescription.FromAtomIndex.htm" />
+        <HelpTOCNode Title="ToAtomIndex Property " Url="html/P-Babylon.Blazor.Chemical.BondDescription.ToAtomIndex.htm" />
+        <HelpTOCNode Title="Type Property " Url="html/P-Babylon.Blazor.Chemical.BondDescription.Type.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="BondDescription.BondType Enumeration" Url="html/T-Babylon.Blazor.Chemical.BondDescription.BondType.htm" />
+    <HelpTOCNode Id="d3b229c3-b2ea-4404-914c-7917c79b2a3a" Title="ChemicalData Class" Url="html/T-Babylon.Blazor.Chemical.ChemicalData.htm">
+      <HelpTOCNode Title="ChemicalData Members" Url="html/AllMembers.T-Babylon.Blazor.Chemical.ChemicalData.htm" />
+      <HelpTOCNode Id="1d5b9c12-2bcc-4a8f-b42b-3badf6d06280" Title="ChemicalData Methods" Url="html/Methods.T-Babylon.Blazor.Chemical.ChemicalData.htm">
+        <HelpTOCNode Title="GetBoundingBox Method " Url="html/M-Babylon.Blazor.Chemical.ChemicalData.GetBoundingBox.htm" />
+        <HelpTOCNode Title="GetCenter Method " Url="html/M-Babylon.Blazor.Chemical.ChemicalData.GetCenter.htm" />
+        <HelpTOCNode Title="MoveCenterToZero Method " Url="html/M-Babylon.Blazor.Chemical.ChemicalData.MoveCenterToZero.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="55a8fc31-2dd0-4895-b993-7d65b8cdf579" Title="ChemicalData Properties" Url="html/Properties.T-Babylon.Blazor.Chemical.ChemicalData.htm">
+        <HelpTOCNode Title="Atoms Property " Url="html/P-Babylon.Blazor.Chemical.ChemicalData.Atoms.htm" />
+        <HelpTOCNode Title="Bonds Property " Url="html/P-Babylon.Blazor.Chemical.ChemicalData.Bonds.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="cda28a43-0c74-4f12-adc4-5b2011692625" Title="ColorPalette Class" Url="html/T-Babylon.Blazor.Chemical.ColorPalette.htm">
+      <HelpTOCNode Title="ColorPalette Members" Url="html/AllMembers.T-Babylon.Blazor.Chemical.ColorPalette.htm" />
+      <HelpTOCNode Title="ColorPalette Methods" Url="html/Methods.T-Babylon.Blazor.Chemical.ColorPalette.htm" />
+      <HelpTOCNode Id="e496c802-f00c-4d66-9495-929233b8eb07" Title="ColorPalette Properties" Url="html/Properties.T-Babylon.Blazor.Chemical.ColorPalette.htm">
+        <HelpTOCNode Title="GetColors Property " Url="html/P-Babylon.Blazor.Chemical.ColorPalette.GetColors.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="366266e6-0bfc-4c5a-b3f1-eade2607886e" Title="MoleculeCreator Class" Url="html/T-Babylon.Blazor.Chemical.MoleculeCreator.htm">
+      <HelpTOCNode Title="MoleculeCreator Members" Url="html/AllMembers.T-Babylon.Blazor.Chemical.MoleculeCreator.htm" />
+      <HelpTOCNode Title="MoleculeCreator Constructor " Url="html/M-Babylon.Blazor.Chemical.MoleculeCreator.-ctor.htm" />
+      <HelpTOCNode Id="14fe128b-263c-49b2-a1a2-42ab32c83bd7" Title="MoleculeCreator Methods" Url="html/Methods.T-Babylon.Blazor.Chemical.MoleculeCreator.htm">
+        <HelpTOCNode Title="CreateAsync Method " Url="html/M-Babylon.Blazor.Chemical.MoleculeCreator.CreateAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6134c898-4a92-4d44-90fc-96da79c4a443" Title="MoleculeCreator Properties" Url="html/Properties.T-Babylon.Blazor.Chemical.MoleculeCreator.htm">
+        <HelpTOCNode Title="DistanceScale Property " Url="html/P-Babylon.Blazor.Chemical.MoleculeCreator.DistanceScale.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c34efed1-39ed-4c01-b61d-456e1a805d04" Title="Point3D Class" Url="html/T-Babylon.Blazor.Chemical.Point3D.htm">
+      <HelpTOCNode Title="Point3D Members" Url="html/AllMembers.T-Babylon.Blazor.Chemical.Point3D.htm" />
+      <HelpTOCNode Id="bfcf56d5-fb7b-406d-b478-163c73b78edd" Title="Point3D Methods" Url="html/Methods.T-Babylon.Blazor.Chemical.Point3D.htm">
+        <HelpTOCNode Title="ToString Method " Url="html/M-Babylon.Blazor.Chemical.Point3D.ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="94aea4ef-06e5-4f03-8ae8-df5fd6f5b991" Title="Point3D Properties" Url="html/Properties.T-Babylon.Blazor.Chemical.Point3D.htm">
+        <HelpTOCNode Title="X Property " Url="html/P-Babylon.Blazor.Chemical.Point3D.X.htm" />
+        <HelpTOCNode Title="Y Property " Url="html/P-Babylon.Blazor.Chemical.Point3D.Y.htm" />
+        <HelpTOCNode Title="Z Property " Url="html/P-Babylon.Blazor.Chemical.Point3D.Z.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="182f68cc-f531-40d5-ba2e-5f4932bf547f" Title="Utils Class" Url="html/T-Babylon.Blazor.Chemical.Utils.htm">
+      <HelpTOCNode Title="Utils Members" Url="html/AllMembers.T-Babylon.Blazor.Chemical.Utils.htm" />
+      <HelpTOCNode Id="7ded0435-05b2-49ff-9350-5091c6c744e9" Title="Utils Methods" Url="html/Methods.T-Babylon.Blazor.Chemical.Utils.htm">
+        <HelpTOCNode Title="ConvertToFormula Method " Url="html/M-Babylon.Blazor.Chemical.Utils.ConvertToFormula.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e82d203a-b3e3-467b-b020-cc565217f589" Title="WaterMoleculeCreator Class" Url="html/T-Babylon.Blazor.Chemical.WaterMoleculeCreator.htm">
+      <HelpTOCNode Title="WaterMoleculeCreator Members" Url="html/AllMembers.T-Babylon.Blazor.Chemical.WaterMoleculeCreator.htm" />
+      <HelpTOCNode Title="WaterMoleculeCreator Constructor " Url="html/M-Babylon.Blazor.Chemical.WaterMoleculeCreator.-ctor.htm" />
+      <HelpTOCNode Id="dff178d9-2dc7-4aa3-ad52-962b9cdf49b2" Title="WaterMoleculeCreator Methods" Url="html/Methods.T-Babylon.Blazor.Chemical.WaterMoleculeCreator.htm">
+        <HelpTOCNode Title="CreateAsync Method " Url="html/M-Babylon.Blazor.Chemical.WaterMoleculeCreator.CreateAsync.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="WaterMoleculeCreator Properties" Url="html/Properties.T-Babylon.Blazor.Chemical.WaterMoleculeCreator.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

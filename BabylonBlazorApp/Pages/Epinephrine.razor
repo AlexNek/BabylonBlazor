@@ -1,0 +1,78 @@
+﻿@page "/epinephrine"
+@using Babylon.Blazor.Chemical
+
+<h3>Epinephrine</h3>
+<p> Chemical formula of Epinephrine is C<sub>9</sub>H<sub>13</sub>NO<sub>3</sub></p>
+<div style="height: 600px;">
+    <BabylonCanvas CanvasId="Canvas3" SceneData=@PanelData/>
+</div>
+@code {
+    ChemicalData PanelData { get; } = new ChemicalData();
+
+    async Task InitDataAsync()
+    {
+    // Fake await line
+        await Task.FromResult(1);
+
+        PanelData.Atoms.Add(new AtomDescription() { X = 1.7394, Y = -2.1169 - 1.0894, Name = "O" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -2.2941, Y = 1.0781, Z = -1.7979, Name = "O" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -3.6584, Y = 0.5842, Z = 0.5722, Name = "O" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 2.6359, Y = 1.0243, Z = 0.7030, Name = "N" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 1.6787, Y = -1.1447, Z = -0.0373, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 0.2684, Y = -0.6866, Z = 0.1208, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 2.6376, Y = 0.0193, Z = -0.3576, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -0.3658, Y = -0.0099, Z = -0.9212, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -0.4164, Y = -0.9343, Z = 1.3105, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -1.6849, Y = 0.4191, Z = -0.7732, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -1.7353, Y = -0.5053, Z = 1.4585, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -2.3696, Y = 0.1713, Z = 0.4166, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 3.5645, Y = 2.1013, Z = 0.3950, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 2.0210, Y = -1.6511, Z = 0.8741, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 2.3808, Y = 0.4742, Z = -1.3225, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 3.6478, Y = -0.3931, Z = -0.4831, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 0.1501, Y = 0.1801, Z = -1.8589, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 0.0640, Y = -1.4598, Z = 2.1315, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 2.9013, Y = 0.588, Z = 1.5858, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -2.2571, Y = -0.705, Z = 2.3907, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 2.6646, Y = -2.4067, Z = -1.1652, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 3.2862, Y = 2.6124, Z = -0.5325, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 4.5925, Y = 1.7346, Z = 0.3078, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 3.5401, Y = 2.8441, Z = 1.1985, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -3.2008, Y = 1.2997, Z = -1.5231, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -3.9690, Y = 0.3259, Z = 1.4570, Name = "H" });
+
+        PanelData.Bonds.Add(new BondDescription(1, 5, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(1, 21, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(2, 10, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(2, 25, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(3, 12, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(3, 26, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(4, 7, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(4, 13, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(4, 19, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(5, 6, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(5, 7, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(5, 14, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(6, 8, BondDescription.BondType.Double));
+        PanelData.Bonds.Add(new BondDescription(6, 9, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(7, 15, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(7, 16, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(8, 10, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(8, 17, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(9, 11, BondDescription.BondType.Double));
+        PanelData.Bonds.Add(new BondDescription(9, 18, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(10, 12, BondDescription.BondType.Double));
+        PanelData.Bonds.Add(new BondDescription(11, 12, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(11, 20, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(13, 22, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(13, 23, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(13, 24, BondDescription.BondType.Single));
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await InitDataAsync();
+    }
+
+}

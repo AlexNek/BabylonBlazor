@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageId>Babylon.Blazor</PackageId>
+    <Authors>Alex Nek</Authors>
+    <Company>private</Company>
+    <Product>Balylon.Blazor</Product>
+    <Description>JS interop for Babylon 3D</Description>
+    <AssemblyName>Babylon.Blazor</AssemblyName>
+    <RootNamespace>Babylon.Blazor</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Babylon\BabylonFactory.cs" />
+    <Compile Remove="Babylon\BabylonObjectOld.cs" />
+    <Compile Remove="Babylon\IBabylonFactory.cs" />
+    <Compile Remove="Babylon\JsRuntimeObjectRef.cs" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+</Project>

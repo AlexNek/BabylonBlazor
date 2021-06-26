@@ -1,0 +1,62 @@
+﻿@page "/benzene"
+@using Babylon.Blazor.Chemical
+
+<h1>Benzene</h1>
+<p> Chemical formula of Benzene is C<sub>6</sub>H<sub>6</sub></p>
+
+<div style="height: 600px;">
+    <BabylonCanvas CanvasId="Canvas2" SceneData=@PanelData/>
+</div>
+
+
+
+@code {
+
+    ChemicalData PanelData { get; } = new ChemicalData();
+
+    async Task InitDataAsync()
+    {
+    // Fake await line
+        await Task.FromResult(1);
+
+
+        PanelData.Atoms.Add(new AtomDescription() { X = -1.2131, Y = -0.6884, Z = 0.0000, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -1.2028, Y = 0.7064, Z = 0.0001, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -0.0103, Y = -1.3948, Z = 0.0000, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 0.0104, Y = 1.3948, Z = -0.0001, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 1.2028, Y = -0.7063, Z = 0.0000, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 1.2131, Y = 0.6884, Z = 0.0000, Name = "C" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -2.1577, Y = -1.2244, Z = 0.0000, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -2.1393, Y = 1.2564, Z = 0.0001, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = -0.0184, Y = -2.4809, Z = -0.0001, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 0.0184, Y = 2.4808, Z = 0.0000, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 2.1394, Y = -1.2563, Z = 0.0001, Name = "H" });
+        PanelData.Atoms.Add(new AtomDescription() { X = 2.1577, Y = 1.2245, Z = 0.0000, Name = "H" });
+
+        PanelData.Bonds.Add(new BondDescription(1,  2,  BondDescription.BondType.Double));
+        PanelData.Bonds.Add(new BondDescription(1,  3,  BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(1,  7,  BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(2,  4,  BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(2,  8,  BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(3,  5,  BondDescription.BondType.Double));
+        PanelData.Bonds.Add(new BondDescription(3,  9,  BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(4,  6,  BondDescription.BondType.Double));
+        PanelData.Bonds.Add(new BondDescription(4, 10, BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(5,  6,  BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(5, 11,  BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(6, 12,  BondDescription.BondType.Single));
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await InitDataAsync();
+    }
+
+
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

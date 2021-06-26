@@ -1,0 +1,17 @@
+﻿@using Microsoft.Extensions.Logging
+@inject ILogger<Error> _logger
+
+<CascadingValue Value=this>
+    @ChildContent
+</CascadingValue>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    public void ProcessError(Exception ex)
+    {
+        _logger.LogError("Error:ProcessError - Type: {Type} Message: {Message}",
+            ex.GetType(), ex.Message);
+    }
+}
