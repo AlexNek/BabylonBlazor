@@ -115,7 +115,7 @@ Test1
 
 ![--Test1 pic--](docs/images/test1.png)
 
-Test2 (commented)
+Test2 (commented)  
 ![--Test2 pic--](docs/images/test2.png)
 
 ### How it works?
