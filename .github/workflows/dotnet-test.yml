@@ -1,4 +1,4 @@
-name: .NET
+name: dotnet test
 
 on:
   workflow_dispatch:
