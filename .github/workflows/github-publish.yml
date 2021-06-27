@@ -29,6 +29,8 @@ jobs:
         with:
           dotnet-version: 5.0.201
 
+      - run: echo "Tag ${{ github.ref }}--."
+
       - name: Build
         shell: bash
         run: |
@@ -50,7 +52,6 @@ jobs:
           rm -r "$release_name"
 
       - name: Publish
-      - run: echo "Tag ${{ github.ref }}--."
 
         uses: softprops/action-gh-release@v1
         with:
