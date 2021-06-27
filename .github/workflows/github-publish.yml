@@ -50,7 +50,7 @@ jobs:
           rm -r "$release_name"
 
       - name: Publish
-      - run: echo "Tag ${{ github.ref }} ."
+      - run: echo "Tag ${{ github.ref }}--."
 
         uses: softprops/action-gh-release@v1
         with:
