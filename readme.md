@@ -73,6 +73,7 @@ Add `InstanceCreator` to **DI**
 
 Add Razor page and replace context to similar code
 ```C#
+@page "/test"
 @using Babylon.Blazor.Chemical
 <h1>Water</h1>
 
