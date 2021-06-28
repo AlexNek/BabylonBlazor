@@ -33,6 +33,9 @@ Using .NET CLI
 dotnet add package Babylon.Blazor
 ```
 
+Using MS VS Manage NuGet Packages  
+Search for `Babylon.Blazor`
+
 Add reference to babylon js library. Add 2 lines into index.html
 ```html
 <body>
@@ -52,15 +55,32 @@ Add reference to babylon js library. Add 2 lines into index.html
 </body>
 ```
 
+Add `InstanceCreator` to **DI**
+```C#
+ public class Program
+    {
+        public static async Task Main(string[] args)
+        {
+       ...
+            
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+            builder.Services.AddTransient(sp => new InstanceCreator(sp.GetService<IJSRuntime>()));
+            await builder.Build().RunAsync();
+        }
+    }
+```
+
 Add Razor page and replace context to similar code
 ```C#
+@page "/test"
 @using Babylon.Blazor.Chemical
 <h1>Water</h1>
 
 <p> Chemical formula of water is H<sub>2</sub>O</p>
 
 <div style="height: 600px;">
-   <BabylonCanvas CanvasId="Canvas1" ChemicalData=@PanelData/>
+   <BabylonCanvas CanvasId="Canvas1" SceneData=@PanelData/>
 </div>
 
 @code {
@@ -88,6 +108,13 @@ Add Razor page and replace context to similar code
 
 }
 ```
+
+Add to _Imports.razor
+```
+@using Babylon.Blazor
+```
+> **_NOTE:_**  You can skip this step
+
 ### Demo Application
 
 
