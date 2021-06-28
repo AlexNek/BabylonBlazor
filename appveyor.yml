@@ -4,26 +4,35 @@ branches:
   only:
   - master
 
+skip_tags: true
 image: Visual Studio 2019
 configuration: Release
-platform: Any CPU
-
-assembly_info:
+dotnet_csproj:
   patch: true
-  file: '**\AssemblyInfo.*'
+  file: '**\*.csproj'
+  version: '{version}'
+  version_prefix: '{version}'
+  package_version: '{version}'
   assembly_version: '{version}'
-  assembly_file_version: '{version}'
-  assembly_informational_version: '{version}'
-
-nuget:
-  project_feed: true
+  file_version: '{version}'
+  informational_version: '{version}'
 
 before_build:
-- ps: nuget restore
+- ps: dotnet restore
 
 build:
+  project: Babylon.Blazor.Lib\Babylon.Blazor.csproj
   verbosity: minimal
 
 artifacts:
-- path: BlazorBabylon\Babylon.Blazor.Lib\bin\Release\net5.0\Babylon.Blazor.dll 
-  name: Babylon.Blazor.dll
+- path: Babylon.Blazor.Lib\bin\Release\net5.0\Babylon.Blazor.dll
+  name: Babylon.Blazor
+
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: F/19bv2TYoeZ5LhzsKZUeVYgpbI53wUcX8RSHE9+T8CD1Q6tXF+3IBU5xe2YyQQx
+  artifact: Babylon.Blazor
+- provider: NuGet
+  api_key:
+    secure: 7uBsvquYgLqrQREBfflKXMwz8H1yJizhlIAwug+V4iW6W/pIJrTy5Wb5XfBxpecl
