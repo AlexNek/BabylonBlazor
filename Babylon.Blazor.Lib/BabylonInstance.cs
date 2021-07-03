@@ -44,6 +44,13 @@ namespace Babylon.Blazor
             return new Color3(jsColor3);
         }
 
+        public async Task DrawText(string canvasId, string text, Color color, int x=0, int y=16, string fontText= "15px Arial")
+        {
+            //canvasId,x,y,text, fontText, colorText
+            await _babylonWrapper.InvokeVoidAsync("drawText", canvasId, x, y, text, fontText, color.Name);
+
+        }
+
         /// <summary>
         /// Creates the engine.
         /// </summary>

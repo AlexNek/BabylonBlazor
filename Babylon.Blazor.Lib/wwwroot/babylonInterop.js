@@ -1,4 +1,12 @@
-﻿export function createTestScene(canvasId) {
+﻿export function drawText(canvasId,x,y,text, fontText, colorText) {
+    var babylonCanvas = document.getElementById(canvasId);
+    var ctx = babylonCanvas.getContext('2d');
+    ctx.fillStyle = colorText;
+    ctx.font = fontText;
+    ctx.fillText(text, x,y);
+}
+
+export function createTestScene(canvasId) {
     var babylonCanvas = document.getElementById(canvasId);
     /// <var>The engine</var>
     var engine = new BABYLON.Engine(babylonCanvas, true);
