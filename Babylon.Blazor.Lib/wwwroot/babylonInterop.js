@@ -1,8 +1,12 @@
 ﻿export function drawText(canvasId,x,y,text, fontText, colorText) {
     var babylonCanvas = document.getElementById(canvasId);
     var ctx = babylonCanvas.getContext('2d');
-    ctx.fillStyle = colorText;
-    ctx.font = fontText;
+    if (colorText) {
+        ctx.fillStyle = colorText;
+    }
+    if (fontText) {
+        ctx.font = fontText;
+    }
     ctx.fillText(text, x,y);
 }
 
