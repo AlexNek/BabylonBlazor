@@ -9,6 +9,7 @@
     <Description>JS interop for Babylon 3D</Description>
     <AssemblyName>Babylon.Blazor</AssemblyName>
     <RootNamespace>Babylon.Blazor</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
