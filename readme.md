@@ -222,3 +222,10 @@ public class MyCustomCanvas : BabylonCanvasBase
 @inherits MyCustomCanvas
 <canvas id=@CanvasId touch-action="none" />
 ```
+## What's New
+### in Version 1.1
+
+New features:
+ - Show errors on 3D canvas
+ - Added new component ChemFormulaViewer
+ - Expand ChemicalData. Added new properties: ErrorText, MolecularFormula, Name, ShowErrorText
