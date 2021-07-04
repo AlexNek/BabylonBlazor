@@ -34,12 +34,20 @@ namespace Babylon.Blazor
                 MoleculeCreator creator = new MoleculeCreator(babylonInstance, canvasId, panelData);
                 if (panelData.Atoms.Count > 0)
                 {
-                    await creator.CreateAsync(this);
+                    if (panelData.ShowErrorText && !String.IsNullOrEmpty(panelData.ErrorText))
+                    {
+                        await babylonInstance.DrawText(canvasId, panelData.ErrorText, Color.DarkRed);
+                    }
+                    else
+                    {
+                        await creator.CreateAsync(this);
+                    }
                 }
                 else
                 {
                     await babylonInstance.DrawText(canvasId, "Nothing to Draw", Color.DarkRed);
                 }
+
             }
             else
             {
