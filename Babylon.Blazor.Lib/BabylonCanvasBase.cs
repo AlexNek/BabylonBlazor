@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Threading.Tasks;
 
 using Babylon.Blazor.Chemical;
@@ -30,20 +31,37 @@ namespace Babylon.Blazor
             if (SceneData is ChemicalData)
             {
                 panelData = (ChemicalData)SceneData;
+                MoleculeCreator creator = new MoleculeCreator(babylonInstance, canvasId, panelData);
+                if (panelData.Atoms.Count > 0)
+                {
+                    if (panelData.ShowErrorText && !String.IsNullOrEmpty(panelData.ErrorText))
+                    {
+                        await babylonInstance.DrawText(canvasId, panelData.ErrorText, Color.DarkRed);
+                    }
+                    else
+                    {
+                        await creator.CreateAsync(this);
+                    }
+                }
+                else
+                {
+                    await babylonInstance.DrawText(canvasId, "Nothing to Draw", Color.DarkRed);
+                }
+
             }
             else
             {
+                await babylonInstance.DrawText(canvasId, "Scene data is null", Color.DarkRed);
                 //use water molecule by errors
-                panelData = new ChemicalData();
-                panelData.Atoms.Add(new AtomDescription { Name = "O", X = 2.5369, Y = -0.1550, Z = 0.0000 });
-                panelData.Atoms.Add(new AtomDescription { Name = "H", X = 3.0739, Y = 0.1550, Z = 0.0000 });
-                panelData.Atoms.Add(new AtomDescription { Name = "H", X = 2.0000, Y = 1.1550, Z = 0.0000 });
-                panelData.Bonds.Add(new BondDescription(1, 2, BondDescription.BondType.Single));
-                panelData.Bonds.Add(new BondDescription(1, 3, BondDescription.BondType.Single));
+                //panelData = new ChemicalData();
+                //panelData.Atoms.Add(new AtomDescription { Name = "O", X = 2.5369, Y = -0.1550, Z = 0.0000 });
+                //panelData.Atoms.Add(new AtomDescription { Name = "H", X = 3.0739, Y = 0.1550, Z = 0.0000 });
+                //panelData.Atoms.Add(new AtomDescription { Name = "H", X = 2.0000, Y = 1.1550, Z = 0.0000 });
+                //panelData.Bonds.Add(new BondDescription(1, 2, BondDescription.BondType.Single));
+                //panelData.Bonds.Add(new BondDescription(1, 3, BondDescription.BondType.Single));
             }
 
-            MoleculeCreator creator = new MoleculeCreator(babylonInstance, canvasId, panelData);
-            await creator.CreateAsync(this);
+            
         }
 
         /// <summary>
