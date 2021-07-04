@@ -6,10 +6,17 @@
     <Authors>Alex Nek</Authors>
     <Company>private</Company>
     <Product>Balylon.Blazor</Product>
-    <Description>JS interop for Babylon 3D</Description>
+    <Description>This library packages the well-known 3D library [Babylon.js](https://www.babylonjs.com/) into a Razor component that can be used in a C# Blazor project.
+The library is intended to use for creation of molecules visualization and used limited API of Babylon library.
+
+More info on [github](https://github.com/AlexNek/BabylonBlazor)
+</Description>
     <AssemblyName>Babylon.Blazor</AssemblyName>
     <RootNamespace>Babylon.Blazor</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/AlexNek/BabylonBlazor</RepositoryUrl>
+    <PackageTags>babylon.js blazor net5.0 web</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,6 +38,13 @@
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
