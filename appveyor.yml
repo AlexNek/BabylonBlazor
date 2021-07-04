@@ -22,17 +22,21 @@ before_build:
 
 build:
   project: Babylon.Blazor.Lib\Babylon.Blazor.csproj
+  publish_nuget: true
   verbosity: minimal
 
 artifacts:
 - path: Babylon.Blazor.Lib\bin\Release\net5.0\Babylon.Blazor.dll
-  name: Babylon.Blazor
+  name: Babylon.BlazorLib
 
 deploy:
 - provider: GitHub
   auth_token:
     secure: F/19bv2TYoeZ5LhzsKZUeVYgpbI53wUcX8RSHE9+T8CD1Q6tXF+3IBU5xe2YyQQx
-  artifact: Babylon.Blazor
+  artifact: Babylon.BlazorLib
+  force_update: true
+
 - provider: NuGet
   api_key:
     secure: 7uBsvquYgLqrQREBfflKXMwz8H1yJizhlIAwug+V4iW6W/pIJrTy5Wb5XfBxpecl
+  artifact: Babylon.BlazorLib
