@@ -7,6 +7,7 @@ branches:
 skip_tags: true
 image: Visual Studio 2019
 configuration: Release
+
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
@@ -39,4 +40,6 @@ deploy:
 - provider: NuGet
   api_key:
     secure: 7uBsvquYgLqrQREBfflKXMwz8H1yJizhlIAwug+V4iW6W/pIJrTy5Wb5XfBxpecl
-  artifact: Babylon.BlazorLib
+  skip_symbols: true
+  on:
+    branch: master
