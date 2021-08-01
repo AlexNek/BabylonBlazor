@@ -1,8 +1,10 @@
 ﻿# Babylon.Blazor 
-[![Build status](https://ci.appveyor.com/api/projects/status/c6hl19cdakmoxjiq?svg=true)](https://ci.appveyor.com/project/AlexNek/babylonblazor) [![Publish Status](https://img.shields.io/github/workflow/status/AlexNek/BabylonBlazor/Publish?label=publish)](https://www.nuget.org/packages/BaBylon.Blazor/) [![Examples Status](https://img.shields.io/github/workflow/status/AlexNek/BabylonBlazor/Examples?label=examples)](https://BaBylon.Blazor.azurewebsites.net/) [![NuGet Status](https://img.shields.io/nuget/v/Babylon.Blazor)](https://www.nuget.org/packages/Babylon.Blazor/)
+[![Build status](https://ci.appveyor.com/api/projects/status/c6hl19cdakmoxjiq?svg=true)](https://ci.appveyor.com/project/AlexNek/babylonblazor) [![Publish Status](https://img.shields.io/github/workflow/status/AlexNek/BabylonBlazor/Publish?label=publish)](https://www.nuget.org/packages/BaBylon.Blazor/)  [![NuGet Status](https://img.shields.io/nuget/v/Babylon.Blazor)](https://www.nuget.org/packages/Babylon.Blazor/)
 
 This library packages the well-known 3D library [Babylon.js](https://www.babylonjs.com/) into a Razor component that can be used in a C# Blazor project.
-The library is intended to use for creation of molecules visualization and used limited API of Babylon library.
+The library is intended to use for creation of molecules visualization and used limited API of Babylon library.  
+  
+[Demo application](https://babylonblazordemoapp.azurewebsites.net)
 
 
 ## Getting Started
