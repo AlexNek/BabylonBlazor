@@ -154,7 +154,7 @@ export function createSphere(name, options, rotation, position, scene) {
 }
 
 export function сreateCylinder (name, options, rotation, position, scene) {
-    //alert(options);
+    //alert(options);123
     //alert("сreateCylinder2");
     var mesh = BABYLON.MeshBuilder.CreateCylinder(name, options, scene);
     if (rotation) {
@@ -164,6 +164,20 @@ export function сreateCylinder (name, options, rotation, position, scene) {
         mesh.position = position;
     }
     //mesh.position.x = 2.125;
+    //alert(mesh);
+    return mesh;
+}
+
+export function сreateBox(name, options, rotation, position, scene) {
+    //alert(options);
+    //alert("сreateBox");
+    var mesh = BABYLON.MeshBuilder.CreateCylinder(name, options, scene);
+    if (rotation) {
+        mesh.rotation = rotation;
+    }
+    if (position) {
+        mesh.position = position;
+    }
     //alert(mesh);
     return mesh;
 }

@@ -59,6 +59,19 @@ namespace Babylon.Blazor.Babylon
             return new ArcRotateCamera(jsCamera, BabylonInstance);
         }
 
+        public async Task<Mesh> CreateBox(string name, MeshParameters parameters)
+        {
+            // var box = BABYLON.Mesh.CreateBox("box", 3.0, scene);
+            var jsMesh = await BabylonInstance.InvokeAsync<IJSObjectReference>(
+                             "createBox",
+                             name,
+                             parameters.Options.Data,
+                             parameters.Rotation?.JsObjRef,
+                             parameters.Position?.JsObjRef,
+                             JsObjRef);
+            return new Mesh(jsMesh, BabylonInstance);
+        }
+
         /// <summary>
         /// Creates the cylinder.
         /// </summary>
@@ -67,6 +80,7 @@ namespace Babylon.Blazor.Babylon
         /// <returns>Mesh.</returns>
         public async Task<Mesh> CreateCylinder(string name, MeshParameters parameters)
         {
+            //export function сreateCylinder (name, options, rotation, position, scene) {
             var jsMesh = await BabylonInstance.InvokeAsync<IJSObjectReference>(
                              "сreateCylinder",
                              name,
