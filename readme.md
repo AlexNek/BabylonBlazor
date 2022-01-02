@@ -234,6 +234,8 @@ New features:
  - add single color Box
  - add Torus
  - add sample of custom scene drawing
+ ![--Custom Draw pic--](docs/images/customdraw.png)
+
 
  ##Developer notes
  If you want to change the library then don't use IIS express by debugging because JS files will be not easy to change.
