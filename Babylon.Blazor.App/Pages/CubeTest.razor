@@ -29,7 +29,7 @@ Bond Type:
     BondDescription.BondType bondType = BondDescription.BondType.Double;
     int EditionCode = 1;
 
-    void RadioSelection(ChangeEventArgs args)
+    async Task RadioSelection(ChangeEventArgs args)
     {
         //EditionCode = int.Parse(args.Value.ToString());
         Console.WriteLine($"args:{args.Value},{args.Value.GetType()}");
@@ -37,8 +37,8 @@ Bond Type:
         bondType = Enum.Parse<BondDescription.BondType>(args.Value.ToString());
         PanelData.Atoms.Clear();
         PanelData.Bonds.Clear();
-        InitDataAsync();
-        InvokeAsync(StateHasChanged);
+        await  InitDataAsync();
+        await InvokeAsync(StateHasChanged);
     }
 
     async Task InitDataAsync()

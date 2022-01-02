@@ -1,9 +1,10 @@
 ﻿@page "/"
 @using Babylon.Blazor.Chemical
+
 <h1>Water</h1>
 
-<p> Chemical formula of water is H<sub>2</sub>O</p>
-@*<p> Chemical formula of water is @(Utils.ConvertToFormula("H2O"))</p>*@
+@*<p> Chemical formula of water is H<sub>2</sub>O</p>*@
+<p> Chemical formula of water is <ChemFormulaViewer FormulaText="H2O"/></p>
 <style>
     .my-component1 {
         border: 2px dashed red;

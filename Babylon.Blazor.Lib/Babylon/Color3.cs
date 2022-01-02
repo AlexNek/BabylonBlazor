@@ -3,7 +3,7 @@
 namespace Babylon.Blazor.Babylon
 {
     /// <summary>
-    /// Class Color3.
+    /// Class Color3. RGB color
     /// Implements the <see cref="Babylon.Blazor.Babylon.BabylonObject" />
     /// </summary>
     /// <seealso cref="Babylon.Blazor.Babylon.BabylonObject" />
