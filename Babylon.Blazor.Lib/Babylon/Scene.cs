@@ -59,6 +59,34 @@ namespace Babylon.Blazor.Babylon
             return new ArcRotateCamera(jsCamera, BabylonInstance);
         }
 
+        public async Task<Mesh> CreateBox(string name, MeshParameters parameters)
+        {
+            //export function createBox(name, options, rotation, position, scene)
+            // var box = BABYLON.Mesh.CreateBox("box", 3.0, scene);
+            BoxOptions boxOptions = parameters.Options as BoxOptions;
+            var jsMesh = await BabylonInstance.InvokeAsync<IJSObjectReference>(
+                             "createBox",
+                             name,
+                             parameters.Options.Data,
+                             parameters.Rotation?.JsObjRef,
+                             parameters.Position?.JsObjRef,
+                             boxOptions?.FaceColors?.JsObjRef,
+                             JsObjRef);
+            return new Mesh(jsMesh, BabylonInstance);
+        }
+        public async Task<Mesh> CreateTorus(string name, MeshParameters parameters)
+        {
+            //var torus = BABYLON.Mesh.CreateTorus("torus", 5, 1, 10, scene, false);
+            var jsMesh = await BabylonInstance.InvokeAsync<IJSObjectReference>(
+                             "createTorus",
+                             name,
+                             parameters.Options.Data,
+                             parameters.Rotation?.JsObjRef,
+                             parameters.Position?.JsObjRef,
+                             JsObjRef);
+            return new Mesh(jsMesh, BabylonInstance);
+        }
+        
         /// <summary>
         /// Creates the cylinder.
         /// </summary>
@@ -67,6 +95,7 @@ namespace Babylon.Blazor.Babylon
         /// <returns>Mesh.</returns>
         public async Task<Mesh> CreateCylinder(string name, MeshParameters parameters)
         {
+            //export function сreateCylinder (name, options, rotation, position, scene) {
             var jsMesh = await BabylonInstance.InvokeAsync<IJSObjectReference>(
                              "сreateCylinder",
                              name,

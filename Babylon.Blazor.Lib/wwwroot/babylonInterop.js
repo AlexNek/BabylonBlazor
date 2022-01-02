@@ -101,6 +101,21 @@ export function createColor3(x, y, z) {
     return new BABYLON.Color3(x, y, z);
 }
 
+export function createColor4(r, g, b, a) {
+    //alert(r + ", " + g + ", " + b + ", " + a);
+    return new BABYLON.Color4(r, g, b, a);
+}
+
+export function createFaceColors(r, g, b, a) {
+    var colors = new Array(6);
+
+    for (let i = 0; i < 6; i++) {
+        colors[i] = new BABYLON.Color4(r, g, b, a);
+    }
+    TraceProps("*colors for face*", colors, true);
+    return colors;
+}
+
 export function createArcRotateCamera (name, alpha, beta, radius, target, scene, canvasId) {
     var camera = new BABYLON.ArcRotateCamera(name, alpha, beta, radius, target, scene);
     /// <var>The canvas</var>
@@ -154,7 +169,7 @@ export function createSphere(name, options, rotation, position, scene) {
 }
 
 export function сreateCylinder (name, options, rotation, position, scene) {
-    //alert(options);
+    //alert(options);123
     //alert("сreateCylinder2");
     var mesh = BABYLON.MeshBuilder.CreateCylinder(name, options, scene);
     if (rotation) {
@@ -168,6 +183,40 @@ export function сreateCylinder (name, options, rotation, position, scene) {
     return mesh;
 }
 
+export function createBox(name, options, rotation, position, faceColors, scene) {
+    //alert(options); 
+    //alert("сreateBox");
+    
+    //TraceProps("*createBox.options input*", options, true);
+    //TraceProps("*faceColors*", faceColors, true);
+    if (faceColors && options) {
+        options.faceColors = faceColors;
+    }
+    //TraceProps("*createBox.options*", options, true);
+    var mesh = BABYLON.MeshBuilder.CreateBox(name, options, scene);
+    if (rotation) {
+        mesh.rotation = rotation;
+    }
+    if (position) {
+        mesh.position = position;
+    }
+    //alert(mesh);
+    return mesh;
+}
+
+export function createTorus(name, options, rotation, position, scene) {
+    //alert(options); test1
+    //alert("сreateBox");
+    var mesh = BABYLON.MeshBuilder.CreateTorus(name, options, scene);
+    if (rotation) {
+        mesh.rotation = rotation;
+    }
+    if (position) {
+        mesh.position = position;
+    }
+    //alert(mesh);
+    return mesh;
+}
 export function createTube(name, fromPoint, toPoint, radius, scene) {
     var path = [fromPoint, toPoint];
 
@@ -348,7 +397,7 @@ function TraceProps(name, obj, recursive) {
     /// <param name="name">The name.</param>
     /// <param name="obj">The object.</param>
     /// <param name="recursive">The recursive.</param>
-    console.log(name);
+    console.log(name + " - type:" + typeof(obj));
     for (var key in obj) {
         if (obj.hasOwnProperty(key)) {
             var item = obj[key];

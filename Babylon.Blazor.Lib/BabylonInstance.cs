@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 
 using Babylon.Blazor.Babylon;
+using Babylon.Blazor.Babylon.Parameters;
 
 using Microsoft.JSInterop;
 
@@ -44,11 +45,15 @@ namespace Babylon.Blazor
             return new Color3(jsColor3);
         }
 
-        public async Task DrawText(string canvasId, string text, Color color, int x=0, int y=16, string fontText= "15px Arial")
+        public async Task<Color4> CreateColor4(Color color)
         {
-            //canvasId,x,y,text, fontText, colorText
-            await _babylonWrapper.InvokeVoidAsync("drawText", canvasId, x, y, text, fontText, color.Name);
-
+            var jsColor4 = await _babylonWrapper.InvokeAsync<IJSObjectReference>(
+                               "createColor4",
+                               color.R / 255.0,
+                               color.G / 255.0,
+                               color.B / 255.0,
+                               color.A / 255.0);
+            return new Color4(jsColor4);
         }
 
         /// <summary>
@@ -63,6 +68,17 @@ namespace Babylon.Blazor
             var jsEngine = await _babylonWrapper.InvokeAsync<IJSObjectReference>("createEngine", canvasId, antialias);
             //var jsEngine = await _babylonWrapper.InvokeAsync<IJSObjectReference>("createEngine", "canvasId", true);
             return new Engine(jsEngine, _babylonWrapper);
+        }
+
+        public async Task<BoxOptions.FaceColorsObj> CreateFaceColors(Color color)
+        {
+            var objRef = await _babylonWrapper.InvokeAsync<IJSObjectReference>(
+                               "createFaceColors",
+                               color.R / 255.0,
+                               color.G / 255.0,
+                               color.B / 255.0,
+                               color.A / 255.0);
+            return new BoxOptions.FaceColorsObj(objRef);
         }
 
         /// <summary>
@@ -108,6 +124,12 @@ namespace Babylon.Blazor
         public void Dispose()
         {
             _babylonWrapper.Dispose();
+        }
+
+        public async Task DrawText(string canvasId, string text, Color color, int x = 0, int y = 16, string fontText = "15px Arial")
+        {
+            //canvasId,x,y,text, fontText, colorText
+            await _babylonWrapper.InvokeVoidAsync("drawText", canvasId, x, y, text, fontText, color.Name);
         }
 
         /// <summary>

@@ -1,8 +1,9 @@
 assembly-informational-format: '{Major}.{Minor}.{Patch}.{CommitsSinceVersionSource}'
 mode: Mainline
-next-version: 1.1.0
+next-version: 1.2.0
 branches:
   master: {}
+  develop: {}
 ignore:
   sha: []
 merge-message-formats: {}

@@ -213,7 +213,7 @@ public class MyCustomCanvas : BabylonCanvasBase
             if (ChemicalData is MyCustomData)
             {
                 panelData = (MyCustomData)SceneData;
-	            MoleculeCreator creator = new MoleculeCreator(LibraryWrapper, canvasId, panelData);
+	            MySceneCreator creator = new MySceneCreator(LibraryWrapper, canvasId, panelData);
     	        await creator.CreateAsync(this);
             }
         }
@@ -231,3 +231,13 @@ New features:
  - Show errors on 3D canvas
  - Added new component ChemFormulaViewer
  - Expand ChemicalData. Added new properties: ErrorText, MolecularFormula, Name, ShowErrorText
+
+ ### in Version 1.2
+ - add single color Box
+ - add Torus
+ - add sample of custom scene drawing
+ ![--Custom Draw pic--](docs/images/customdraw.png)
+
+
+ ##Developer notes
+ If you want to change the library then don't use IIS express by debugging because JS files will be not easy to change.
