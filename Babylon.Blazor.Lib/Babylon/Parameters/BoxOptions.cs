@@ -21,17 +21,6 @@ namespace Babylon.Blazor.Babylon.Parameters
 
         private const string WidthJsName = "width"; //width size, overwrites size option
 
-        public enum ESideOrientation
-        {
-            Default = 0,
-
-            FrontSide = 0,
-
-            BackSide = 1,
-
-            DoubleSide = 2
-        }
-
         //private const string HeightJsName = "height";
 
         public double Depth

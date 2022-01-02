@@ -207,7 +207,7 @@ export function createBox(name, options, rotation, position, faceColors, scene) 
 export function createTorus(name, options, rotation, position, scene) {
     //alert(options); test1
     //alert("сreateBox");
-    var mesh = BABYLON.Mesh.CreateTorus(name, options, scene);
+    var mesh = BABYLON.MeshBuilder.CreateTorus(name, options, scene);
     if (rotation) {
         mesh.rotation = rotation;
     }
