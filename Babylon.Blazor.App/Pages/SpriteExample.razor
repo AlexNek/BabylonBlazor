@@ -1,0 +1,27 @@
+﻿@page "/sprite1"
+@using BabylonBlazorApp.Custom
+@* single szene solution only *@
+
+@inherits BabylonCanvasBase
+
+<h3>Sprite Example</h3>
+
+<canvas id=@CanvasId touch-action="none"></canvas>
+
+@code {
+
+    /// <summary>
+    /// Initializes the szene.
+    /// </summary>
+    /// <param name="babylonInstance">The babylon instance.</param>
+    /// <param name="canvasId">The canvas identifier.</param>
+    protected override async Task InitializeSzene(BabylonInstance babylonInstance, string canvasId)
+    {
+       //don't use base init 
+       //await base.InitializeSzene(babylonInstance, canvasId);
+
+        SceneCreator creator = new SpriteExampleSceneCreator(babylonInstance, canvasId);
+
+        await creator.CreateAsync(this);
+    }
+}

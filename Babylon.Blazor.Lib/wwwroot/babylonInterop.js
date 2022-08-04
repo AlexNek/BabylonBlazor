@@ -344,6 +344,32 @@ export function createTextTexture(scene, text, width, height, fontAsText, colorA
     //return null;
 }
 
+//string name, string url, int capacity, int width, int height
+export function сreateSpriteManager(name, url, capacity, width, height, scene) {
+    var spriteManager = new BABYLON.SpriteManager(name, url, capacity, { width: width, height: height }, scene);
+    //var spriteManager = new BABYLON.SpriteManager("treesManager", "https://i.ibb.co/mSpjhgh/Lampe.png", 200, { width: 51, height: 98 }, scene);
+
+    //console.log("*createSpriteManager", spriteManager, url, width, height);
+    return spriteManager;
+}
+
+export function сreateSprite(name, spriteManager) {
+    var sprite = new BABYLON.Sprite(name, spriteManager);
+
+    //console.log("*сreateSprite", sprite, spriteManager, spriteManager);
+    return sprite;
+}
+
+export function playAnimation(fromKey, toKey, isInLoop, startDelay, sprite) {
+    try {
+        sprite.playAnimation(fromKey, toKey, isInLoop, startDelay);
+        //console.log("*playAnimation", sprite);
+    } catch (err) {
+        console.log(err);
+    }
+    //return sprite;
+}
+
 export function showWorldAxis(size,scene) {
     var makeTextPlane = function (text, color, size) {
         var dynamicTexture = new BABYLON.DynamicTexture("DynamicTexture", 50, scene, true);
