@@ -1,8 +1,10 @@
-﻿# Babylon.Blazor 
+# Babylon.Blazor 
 [![Build status](https://ci.appveyor.com/api/projects/status/c6hl19cdakmoxjiq?svg=true)](https://ci.appveyor.com/project/AlexNek/babylonblazor) [![Publish Status](https://img.shields.io/github/workflow/status/AlexNek/BabylonBlazor/Publish?label=publish)](https://www.nuget.org/packages/BaBylon.Blazor/) [![Examples Status](https://img.shields.io/github/workflow/status/AlexNek/BabylonBlazor/Examples?label=examples)](https://BaBylon.Blazor.azurewebsites.net/) [![NuGet Status](https://img.shields.io/nuget/v/Babylon.Blazor)](https://www.nuget.org/packages/Babylon.Blazor/)
 
 This library packages the well-known 3D library [Babylon.js](https://www.babylonjs.com/) into a Razor component that can be used in a C# Blazor project.
-The library is intended to use for creation of molecules visualization and used limited API of Babylon library.
+The library is intended to use for creation of molecules visualization and used limited API of Babylon library.  
+[Demo application](https://babylonblazordemoapp.azurewebsites.net) - Demo for showing different parts of library 
+[Pubchem Viewer](https://pubchemviewer.azurewebsites.net) - Demo application which used library reference. Show chemical information from `pubchem.ncbi.nlm.nih.gov`
 
 
 ## Getting Started
@@ -230,12 +232,26 @@ New features:
  - Added new component ChemFormulaViewer
  - Expand ChemicalData. Added new properties: ErrorText, MolecularFormula, Name, ShowErrorText
 
- ### in Version 1.2
- - add single color Box
- - add Torus
- - add sample of custom scene drawing
+### in Version 1.2
+
+ - added single color Box
+ - added Torus
+ - added sample of custom scene drawing  
  ![--Custom Draw pic--](docs/images/customdraw.png)
 
+### in Version 1.3
 
- ##Developer notes
- If you want to change the library then don't use IIS express by debugging because JS files will be not easy to change.
+ - added sprite manager
+ - added sprite with base attributes
+ - added callback function sample JS to .NET 
+ - added sprite sample  
+ ![--Sprite sample pic--](docs/images/sprites.png)
+
+
+##Developer notes
+
+If you want to change the library then don't use IIS express by debugging because JS files will be not easy to change.
+
+In some cases you can try to refresh the site from developer mode and disabled cache
+
+![--Sprite sample pic--](docs/images/disable-cache.png)
