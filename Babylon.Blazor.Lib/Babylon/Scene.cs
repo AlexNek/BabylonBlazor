@@ -74,19 +74,7 @@ namespace Babylon.Blazor.Babylon
                              JsObjRef);
             return new Mesh(jsMesh, BabylonInstance);
         }
-        public async Task<Mesh> CreateTorus(string name, MeshParameters parameters)
-        {
-            //var torus = BABYLON.Mesh.CreateTorus("torus", 5, 1, 10, scene, false);
-            var jsMesh = await BabylonInstance.InvokeAsync<IJSObjectReference>(
-                             "createTorus",
-                             name,
-                             parameters.Options.Data,
-                             parameters.Rotation?.JsObjRef,
-                             parameters.Position?.JsObjRef,
-                             JsObjRef);
-            return new Mesh(jsMesh, BabylonInstance);
-        }
-        
+
         /// <summary>
         /// Creates the cylinder.
         /// </summary>
@@ -211,6 +199,27 @@ namespace Babylon.Blazor.Babylon
         }
 
         /// <summary>
+        /// Creates the sprite manager.
+        /// </summary>
+        /// <param name="name">The name. Manager name</param>
+        /// <param name="url">The URL. path to the image/spritesheet url</param>
+        /// <param name="capacity">The capacity. Maximum number of sprite instances in this manager</param>
+        /// <param name="width">The width. Width of a sprite or a cell within a spritesheet.</param>
+        /// <param name="height">The height. Height of a sprite or a cell within a spritesheet</param>
+        /// <returns>SpriteManager.</returns>
+        public async Task<SpriteManager> CreateSpriteManager(string name, string url, int capacity, int width, int height)
+        {
+            var jsMesh = await BabylonInstance.InvokeAsync<IJSObjectReference>(
+                             "сreateSpriteManager",
+                             name,
+                             url,
+                             capacity,
+                             width, height,
+                             JsObjRef);
+            return new SpriteManager(jsMesh, BabylonInstance);
+        }
+
+        /// <summary>
         /// Creates the text plane.
         /// </summary>
         /// <param name="position">The position.</param>
@@ -228,6 +237,19 @@ namespace Babylon.Blazor.Babylon
                              "black",
                              rectanglePlaneSize
                          );
+            return new Mesh(jsMesh, BabylonInstance);
+        }
+
+        public async Task<Mesh> CreateTorus(string name, MeshParameters parameters)
+        {
+            //var torus = BABYLON.Mesh.CreateTorus("torus", 5, 1, 10, scene, false);
+            var jsMesh = await BabylonInstance.InvokeAsync<IJSObjectReference>(
+                             "createTorus",
+                             name,
+                             parameters.Options.Data,
+                             parameters.Rotation?.JsObjRef,
+                             parameters.Position?.JsObjRef,
+                             JsObjRef);
             return new Mesh(jsMesh, BabylonInstance);
         }
 

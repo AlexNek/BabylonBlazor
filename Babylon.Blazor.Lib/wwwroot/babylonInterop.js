@@ -344,6 +344,85 @@ export function createTextTexture(scene, text, width, height, fontAsText, colorA
     //return null;
 }
 
+//string name, string url, int capacity, int width, int height
+export function сreateSpriteManager(name, url, capacity, width, height, scene) {
+    var spriteManager = new BABYLON.SpriteManager(name, url, capacity, { width: width, height: height }, scene);
+    //var spriteManager = new BABYLON.SpriteManager("treesManager", "https://i.ibb.co/mSpjhgh/Lampe.png", 200, { width: 51, height: 98 }, scene);
+
+    //console.log("*createSpriteManager", spriteManager, url, width, height);
+    return spriteManager;
+}
+
+export function сreateSprite(name, spriteManager) {
+    var sprite = new BABYLON.Sprite(name, spriteManager);
+
+    //console.log("*сreateSprite", sprite, spriteManager, spriteManager);
+    return sprite;
+}
+
+export function playAnimation(fromKey, toKey, isInLoop, startDelay, onAnimationEndObjectReference, sprite) {
+    try {
+        sprite.playAnimation(fromKey, toKey, isInLoop, startDelay, function () {
+            //called without sprite loop
+            //console.log("*playAnimation loop finished", onAnimationEndObjectReference);
+            onAnimationEndObjectReference.invokeMethodAsync('Babylon.Blazor', 'UpdateMessageCaller');
+            onAnimationEndObjectReference.dispose();
+        });
+        //console.log("*playAnimation", sprite);
+    } catch (err) {
+        console.log(err);
+    } 
+}
+
+export function setPickable(pickable, sprite) {
+    try {
+        sprite.isPickable = pickable;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setPosition(position, sprite) {
+    try {
+        sprite.position = position;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setInvert(invertU,invertV, sprite) {
+    try {
+        sprite.invertU = invertU;
+        sprite.invertV = invertV;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setSize(height, width, sprite) {
+    try {
+        sprite.height = height;
+        sprite.width = width;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setFrameNumber(frameNumber, sprite) {
+    try {
+        sprite.cellIndex = frameNumber;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setAngle(angle, sprite) {
+    try {
+        sprite.angle = angle;
+    } catch (err) {
+        console.log(err);
+    }
+}
 export function showWorldAxis(size,scene) {
     var makeTextPlane = function (text, color, size) {
         var dynamicTexture = new BABYLON.DynamicTexture("DynamicTexture", 50, scene, true);

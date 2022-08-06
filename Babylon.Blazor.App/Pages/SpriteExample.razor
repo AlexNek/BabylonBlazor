@@ -1,0 +1,48 @@
+﻿@page "/sprite1"
+@* single szene solution only *@
+
+@using BabylonBlazorApp.Custom
+@inherits BabylonCanvasBase
+
+<h3>Sprite Example</h3>
+<div>@_message</div>
+<canvas id=@CanvasId touch-action="none"></canvas>
+
+@code {
+
+    /// <summary>
+    /// Initializes the szene.
+    /// </summary>
+    /// <param name="babylonInstance">The babylon instance.</param>
+    /// <param name="canvasId">The canvas identifier.</param>
+    protected override async Task InitializeSzene(BabylonInstance babylonInstance, string canvasId)
+    {
+        RecreateControlAfterRefresh = false;
+
+        //don't use base init 
+        //await base.InitializeSzene(babylonInstance, canvasId);
+
+        SpriteExampleSceneCreator creator = new SpriteExampleSceneCreator(babylonInstance, canvasId);
+
+        creator.AnimationEnd += OnAnimationFinished;
+
+        await creator.CreateAsync(this);
+    }
+
+    /// <summary>
+    /// Returns a flag to indicate whether the component should render.
+    /// </summary>
+    /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+    protected override bool ShouldRender()
+    {
+        return base.ShouldRender();
+    }
+
+    private void OnAnimationFinished(object sender, EventArgs e)
+    {
+        InvokeAsync(() => { _message = "Animation finished"; StateHasChanged();});
+    }
+
+    private string? _message = "Animation running";
+
+}
