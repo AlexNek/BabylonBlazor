@@ -362,7 +362,8 @@ export function сreateSprite(name, spriteManager) {
 
 export function playAnimation(fromKey, toKey, isInLoop, startDelay, onAnimationEndObjectReference, sprite) {
     try {
-        sprite.playAnimation(fromKey, toKey, false, startDelay, function()  {
+        sprite.playAnimation(fromKey, toKey, isInLoop, startDelay, function () {
+            //called without sprite loop
             //console.log("*playAnimation loop finished", onAnimationEndObjectReference);
             onAnimationEndObjectReference.invokeMethodAsync('Babylon.Blazor', 'UpdateMessageCaller');
             onAnimationEndObjectReference.dispose();
@@ -371,9 +372,57 @@ export function playAnimation(fromKey, toKey, isInLoop, startDelay, onAnimationE
     } catch (err) {
         console.log(err);
     } 
-    //return sprite;
 }
 
+export function setPickable(pickable, sprite) {
+    try {
+        sprite.isPickable = pickable;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setPosition(position, sprite) {
+    try {
+        sprite.position = position;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setInvert(invertU,invertV, sprite) {
+    try {
+        sprite.invertU = invertU;
+        sprite.invertV = invertV;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setSize(height, width, sprite) {
+    try {
+        sprite.height = height;
+        sprite.width = width;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setFrameNumber(frameNumber, sprite) {
+    try {
+        sprite.cellIndex = frameNumber;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export function setAngle(angle, sprite) {
+    try {
+        sprite.angle = angle;
+    } catch (err) {
+        console.log(err);
+    }
+}
 export function showWorldAxis(size,scene) {
     var makeTextPlane = function (text, color, size) {
         var dynamicTexture = new BABYLON.DynamicTexture("DynamicTexture", 50, scene, true);

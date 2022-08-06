@@ -45,15 +45,43 @@ namespace BabylonBlazorApp.Custom
             //var hemisphericLightDirection = await BabylonInstance.CreateVector3(1, 1, 0);
             //var light1 = await scene.CreateHemispehericLight("light1", hemisphericLightDirection, 0.98);
 
-            SpriteManager spriteManager = await scene.CreateSpriteManager("playerManager",
+            SpriteManager spriteManagerPlayers = await scene.CreateSpriteManager("playerManager",
                                                                           "https://playground.babylonjs.com/textures/player.png",
                                                                           3,
                                                                           64,
                                                                           64
                                                                           );
-            var player = await spriteManager.CreateSprite("player0");
+            var player0 = await spriteManagerPlayers.CreateSprite("player0");
 
-            await player.PlayAnimation(0, 40, true, 100, DotNetObjectReference.Create(_messageUpdateInvokeHelper));
+            await player0.PlayAnimation(0, 40, false, 100, DotNetObjectReference.Create(_messageUpdateInvokeHelper));
+
+            var player1 = await spriteManagerPlayers.CreateSprite("player1");
+            await player1.SetFrameNumber(2);
+            var player1Position = await BabylonInstance.CreateVector3(-1, 0.2, 0);
+            await player1.SetPosition(player1Position);
+            await player1.SetSize(0.5,0.5);
+            await player1.SetInvert(true, false);
+
+
+            var spriteManagerTrees = await scene.CreateSpriteManager("treesManager", "https://playground.babylonjs.com/textures/palm.png", 1000, 512,1024 );
+            Random rnd = new Random();
+            //We create some trees at random positions
+            for (var i = 0; i < 200; i++) {
+                var tree = await spriteManagerTrees.CreateSprite("tree");
+                double posX = rnd.NextDouble() * 100 - 50;
+                double posZ = rnd.NextDouble() * 10 - 5;
+                var treePosition = await BabylonInstance.CreateVector3(posX, 0, posZ);
+                await tree.SetPosition(treePosition);
+
+                //Add some "dead" trees
+                if (rnd.NextDouble() > 0.9)
+                {
+                    //tree.angle = Math.PI * 90 / 180;
+                    await tree.SetAngle(Math.PI * 90 / 180);
+                    var treePosition2 = await BabylonInstance.CreateVector3(posX, -0.3, posZ);
+                    await tree.SetPosition(treePosition2);
+                }
+            }
 
             await RunRender(canvas, camera, engine, scene);
         }
