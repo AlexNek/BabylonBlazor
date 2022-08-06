@@ -1,14 +1,20 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 using Babylon.Blazor;
 using Babylon.Blazor.Babylon;
 using Babylon.Blazor.Babylon.Parameters;
 
+using Microsoft.JSInterop;
+
 namespace BabylonBlazorApp.Custom
 {
     public class SpriteExampleSceneCreator : SceneCreator
     {
+        public event EventHandler AnimationEnd;
+        private readonly MessageUpdateInvokeHelper? _messageUpdateInvokeHelper;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SceneCreator"/> class.
         /// </summary>
@@ -17,6 +23,7 @@ namespace BabylonBlazorApp.Custom
         public SpriteExampleSceneCreator(BabylonInstance babylonInstance, string canvasId)
             : base(babylonInstance, canvasId)
         {
+            _messageUpdateInvokeHelper = new MessageUpdateInvokeHelper(UpdateMessage);
         }
 
         /// <summary>
@@ -38,15 +45,15 @@ namespace BabylonBlazorApp.Custom
             //var hemisphericLightDirection = await BabylonInstance.CreateVector3(1, 1, 0);
             //var light1 = await scene.CreateHemispehericLight("light1", hemisphericLightDirection, 0.98);
 
-            SpriteManager spriteManager = await scene.CreateSpriteManager(
-                                              "playerManager",
-                                              "https://playground.babylonjs.com/textures/player.png",
-                                              3,
-                                              64,
-                                              64);
+            SpriteManager spriteManager = await scene.CreateSpriteManager("playerManager",
+                                                                          "https://playground.babylonjs.com/textures/player.png",
+                                                                          3,
+                                                                          64,
+                                                                          64
+                                                                          );
             var player = await spriteManager.CreateSprite("player0");
 
-            await player.PlayAnimation(0, 40, true, 100);
+            await player.PlayAnimation(0, 40, true, 100, DotNetObjectReference.Create(_messageUpdateInvokeHelper));
 
             await RunRender(canvas, camera, engine, scene);
         }
@@ -56,6 +63,19 @@ namespace BabylonBlazorApp.Custom
         {
             //await camera.SetAutoRotate(canvas.UseAutoRotate, canvas.IdleRotationSpeed);
             await BabylonInstance.RunRenderLoop(engine, scene);
+        }
+
+        private void UpdateMessage()
+        {
+           Console.WriteLine("Animation finished");
+           OnAnimationEnd();
+        }
+
+        protected virtual void OnAnimationEnd()
+        {
+            EventHandler handler = AnimationEnd;
+            
+            handler?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿#nullable enable
+using System.Threading.Tasks;
 
 using Microsoft.JSInterop;
 
@@ -11,15 +12,20 @@ namespace Babylon.Blazor.Babylon
         {
             BabylonInstance = babylonInstance;
         }
-
-        public async Task PlayAnimation(int fromKey, int toKey, bool isInLoop, int startDelayMs)
+        
+        public async Task PlayAnimation(
+            int fromKey,
+            int toKey,
+            bool isInLoop,
+            int startDelayMs,
+            DotNetObjectReference<MessageUpdateInvokeHelper>? onAnimationEndObjRef=null)
         {
             await BabylonInstance.InvokeVoidAsync(
                 "playAnimation",
                 fromKey,
                 toKey,
                 isInLoop,
-                startDelayMs,
+                startDelayMs, onAnimationEndObjRef,
                 JsObjRef);
         }
 

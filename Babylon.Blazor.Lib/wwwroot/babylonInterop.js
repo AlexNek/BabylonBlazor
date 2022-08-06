@@ -360,13 +360,17 @@ export function сreateSprite(name, spriteManager) {
     return sprite;
 }
 
-export function playAnimation(fromKey, toKey, isInLoop, startDelay, sprite) {
+export function playAnimation(fromKey, toKey, isInLoop, startDelay, onAnimationEndObjectReference, sprite) {
     try {
-        sprite.playAnimation(fromKey, toKey, isInLoop, startDelay);
+        sprite.playAnimation(fromKey, toKey, false, startDelay, function()  {
+            //console.log("*playAnimation loop finished", onAnimationEndObjectReference);
+            onAnimationEndObjectReference.invokeMethodAsync('Babylon.Blazor', 'UpdateMessageCaller');
+            onAnimationEndObjectReference.dispose();
+        });
         //console.log("*playAnimation", sprite);
     } catch (err) {
         console.log(err);
-    }
+    } 
     //return sprite;
 }
 
