@@ -115,7 +115,7 @@ namespace Babylon.Blazor
         protected override bool ShouldRender()
         {
             //Console.WriteLine("*ShouldRender*");
-            _reRender = true;
+            _reRender = RecreateControlAfterRefresh;
             return base.ShouldRender();
         }
 
@@ -147,6 +147,8 @@ namespace Babylon.Blazor
         /// <value><c>true</c> if [use automatic rotate]; otherwise, <c>false</c>.</value>
         [Parameter]
         public bool UseAutoRotate { get; set; } = true;
+
+        public bool RecreateControlAfterRefresh { get; set; } = true;
 
         /// <summary>
         /// Gets the babylon instance.
