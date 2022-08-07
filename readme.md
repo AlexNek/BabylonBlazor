@@ -3,7 +3,8 @@
 
 This library packages the well-known 3D library [Babylon.js](https://www.babylonjs.com/) into a Razor component that can be used in a C# Blazor project.
 The library is intended to use for creation of molecules visualization and used limited API of Babylon library.  
-[Demo application](https://babylonblazordemoapp.azurewebsites.net) - Demo for showing different parts of library 
+
+[Demo application](https://BabylonBlazorApp202208.azurewebsites.net) - Demo for showing different parts of library 
 [Pubchem Viewer](https://pubchemviewer.azurewebsites.net) - Demo application which used library reference. Show chemical information from `pubchem.ncbi.nlm.nih.gov`
 
 
