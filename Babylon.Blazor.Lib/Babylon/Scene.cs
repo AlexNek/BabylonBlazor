@@ -21,12 +21,11 @@ namespace Babylon.Blazor.Babylon
         /// </summary>
         /// <param name="jsObjRef">The js object reference.</param>
         /// <param name="babylonInstance">The babylon instance.</param>
-        public Scene(IJSObjectReference jsObjRef, IJSInProcessObjectReference babylonInstance)
+        public Scene(IJSObjectReference jsObjRef, IJSObjectReference babylonInstance)
             : base(jsObjRef)
         {
             BabylonInstance = babylonInstance;
         }
-
         /// <summary>
         /// Creates the arc rotate camera.
         /// This camera always points towards a given target position and can be rotated around that target with the target as the center of rotation
@@ -286,6 +285,6 @@ namespace Babylon.Blazor.Babylon
         /// Gets the babylon instance.
         /// </summary>
         /// <value>The babylon instance.</value>
-        public IJSInProcessObjectReference BabylonInstance { get; }
+        public IJSObjectReference BabylonInstance { get; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 
@@ -18,8 +19,7 @@ namespace Babylon.Blazor
     /// <seealso cref="System.IDisposable" />
     public class BabylonInstance : IDisposable
     {
-        private readonly IJSInProcessObjectReference _babylonWrapper;
-
+        private readonly IJSObjectReference _babylonWrapper;
         private readonly IJSRuntime _jSInstance;
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Babylon.Blazor
         /// </summary>
         /// <param name="jSInstance">The j s instance.</param>
         /// <param name="babylonWrapper">The babylon wrapper.</param>
-        public BabylonInstance(IJSRuntime jSInstance, IJSInProcessObjectReference babylonWrapper)
+        public BabylonInstance(IJSRuntime jSInstance, IJSObjectReference babylonWrapper)
         {
             _jSInstance = jSInstance;
 
@@ -123,7 +123,14 @@ namespace Babylon.Blazor
         /// </summary>
         public void Dispose()
         {
-            _babylonWrapper.Dispose();
+            if (_babylonWrapper is IJSInProcessObjectReference babylonWrapper)
+            {
+                babylonWrapper.Dispose();
+            }
+            else
+            {
+                Debug.WriteLine("Babylon wrapper is not disposed automatically");
+            }
         }
 
         public async Task DrawText(string canvasId, string text, Color color, int x = 0, int y = 16, string fontText = "15px Arial")

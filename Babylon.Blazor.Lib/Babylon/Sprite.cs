@@ -7,12 +7,12 @@ namespace Babylon.Blazor.Babylon
 {
     public class Sprite : BabylonObject, IJsLibInstanceGetter
     {
-        public Sprite(IJSObjectReference jsObjRef, IJSInProcessObjectReference babylonInstance)
+        public Sprite(IJSObjectReference jsObjRef, IJSObjectReference babylonInstance)
             : base(jsObjRef)
         {
             BabylonInstance = babylonInstance;
         }
-        
+
         public async Task PlayAnimation(
             int fromKey,
             int toKey,
@@ -80,7 +80,7 @@ namespace Babylon.Blazor.Babylon
         /// Gets the babylon instance.
         /// </summary>
         /// <value>The babylon instance.</value>
-        public IJSInProcessObjectReference BabylonInstance { get; }
+        public IJSObjectReference BabylonInstance { get; }
 
         public async Task SetAngle(double angleRadian)
         {

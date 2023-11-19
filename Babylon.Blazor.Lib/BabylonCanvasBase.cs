@@ -163,7 +163,7 @@ namespace Babylon.Blazor
         }
 
         [Inject]
-        private InstanceCreator instanceCreator { get; set; }
+        private InstanceCreatorBase instanceCreator { get; set; }
 
         [Inject]
         private IJSRuntime JS { get; set; }

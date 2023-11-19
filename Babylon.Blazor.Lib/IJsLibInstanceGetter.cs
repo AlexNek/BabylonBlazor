@@ -11,6 +11,6 @@ namespace Babylon.Blazor
         /// Gets the babylon instance.
         /// </summary>
         /// <value>The babylon instance.</value>
-        public IJSInProcessObjectReference BabylonInstance { get; }
+        public IJSObjectReference BabylonInstance { get; }
     }
 }

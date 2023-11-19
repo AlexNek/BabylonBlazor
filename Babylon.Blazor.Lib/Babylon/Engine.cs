@@ -20,12 +20,11 @@ namespace Babylon.Blazor.Babylon
         /// </summary>
         /// <param name="jsObjRef">The js object reference.</param>
         /// <param name="babylonInstance">The babylon instance.</param>
-        public Engine(IJSObjectReference jsObjRef, IJSInProcessObjectReference babylonInstance)
+        public Engine(IJSObjectReference jsObjRef, IJSObjectReference babylonInstance)
             : base(jsObjRef)
         {
             BabylonInstance = babylonInstance;
         }
-
 
         //public Engine(IJSRuntime jsRuntime, JsRuntimeObjectRef objRef) : base(jsRuntime, objRef) { }
         /// <summary>
@@ -42,6 +41,6 @@ namespace Babylon.Blazor.Babylon
         /// Gets the babylon instance.
         /// </summary>
         /// <value>The babylon instance.</value>
-        public IJSInProcessObjectReference BabylonInstance { get; }
+        public IJSObjectReference BabylonInstance { get; }
     }
 }
