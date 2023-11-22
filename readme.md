@@ -236,7 +236,7 @@ public class MyCustomCanvas : BabylonCanvasBase
 
 ### in Version 1.4
  - update to .NET 8.0
- - added show loading component. As the Babylon engine takes some time to render, we want to show the user a 'loading' notification. The default text is "Loading...". You can change it to something else using 'LoadingTemplate'
+ - added show loading component. Currently we use server-side prerendering, but the babylog engine could only work client-side. The Babylon engine takes some time to render. We want to show the user a 'loading' notification instead of an empty area. The default text is "Loading...". You can change it to something else using 'LoadingTemplate'
  
  ```csharp
 <BabylonCanvas CanvasId="Canvas1" SceneData=@PanelData>
