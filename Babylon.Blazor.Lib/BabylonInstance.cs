@@ -17,7 +17,7 @@ namespace Babylon.Blazor
     /// Implements the <see cref="System.IDisposable" />
     /// </summary>
     /// <seealso cref="System.IDisposable" />
-    public class BabylonInstance : IDisposable
+    public class BabylonInstance : IAsyncDisposable
     {
         private readonly IJSObjectReference _babylonWrapper;
         private readonly IJSRuntime _jSInstance;
@@ -121,7 +121,7 @@ namespace Babylon.Blazor
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
-        public void Dispose()
+        public async ValueTask DisposeAsync()
         {
             if (_babylonWrapper is IJSInProcessObjectReference babylonWrapper)
             {
@@ -129,7 +129,7 @@ namespace Babylon.Blazor
             }
             else
             {
-                Debug.WriteLine("Babylon wrapper is not disposed automatically");
+                await _babylonWrapper.DisposeAsync();
             }
         }
 

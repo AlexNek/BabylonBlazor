@@ -1,0 +1,37 @@
+﻿
+@if (_visible)
+{
+    <span>Loading...</span>
+}
+
+@code {
+#nullable enable
+
+    [Parameter]
+    public SpinnerСommander? Model { get; set; }
+
+    private bool _visible = true;
+    /// <summary>
+    /// Method invoked when the component has received parameters from its parent in
+    /// the render tree, and the incoming values have been assigned to properties.
+    /// </summary>
+    protected override void OnParametersSet()
+    {
+        if (Model != null)
+        {
+            Model.SpinnerChanged += OnSpinnerChanged;
+        }
+        base.OnParametersSet();
+    }
+
+    private void OnSpinnerChanged(object? sender, bool visible)
+    {
+        if (visible != _visible)
+        {
+            _visible = visible;
+            //Console.WriteLine($"spinner visible:{visible}");
+            StateHasChanged();
+        }
+    }
+
+}

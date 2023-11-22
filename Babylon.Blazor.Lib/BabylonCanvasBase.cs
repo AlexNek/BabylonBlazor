@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Drawing;
 using System.Threading.Tasks;
 
@@ -21,16 +22,27 @@ namespace Babylon.Blazor
         private bool _reRender;
 
         /// <summary>
+        /// Method invoked when the component is ready to start, having received its
+        /// initial parameters from its parent in the render tree.
+        /// Override this method if you will perform an asynchronous operation and
+        /// want the component to refresh when that operation is completed.
+        /// </summary>
+        /// <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing any asynchronous operation.</returns>
+        protected override async  Task OnInitializedAsync()
+        {
+            await base.OnInitializedAsync();
+           
+        }
+
+        /// <summary>
         /// Initializes the szene.
         /// </summary>
         /// <param name="babylonInstance">The babylon instance.</param>
         /// <param name="canvasId">The canvas identifier.</param>
         protected virtual async Task InitializeSzene(BabylonInstance babylonInstance, string canvasId)
         {
-            ChemicalData panelData;
-            if (SceneData is ChemicalData)
+            if (SceneData is ChemicalData panelData)
             {
-                panelData = (ChemicalData)SceneData;
                 MoleculeCreator creator = new MoleculeCreator(babylonInstance, canvasId, panelData);
                 if (panelData.Atoms.Count > 0)
                 {
@@ -47,21 +59,11 @@ namespace Babylon.Blazor
                 {
                     await babylonInstance.DrawText(canvasId, "Nothing to Draw", Color.DarkRed);
                 }
-
             }
             else
             {
                 await babylonInstance.DrawText(canvasId, "Scene data is null", Color.DarkRed);
-                //use water molecule by errors
-                //panelData = new ChemicalData();
-                //panelData.Atoms.Add(new AtomDescription { Name = "O", X = 2.5369, Y = -0.1550, Z = 0.0000 });
-                //panelData.Atoms.Add(new AtomDescription { Name = "H", X = 3.0739, Y = 0.1550, Z = 0.0000 });
-                //panelData.Atoms.Add(new AtomDescription { Name = "H", X = 2.0000, Y = 1.1550, Z = 0.0000 });
-                //panelData.Bonds.Add(new BondDescription(1, 2, BondDescription.BondType.Single));
-                //panelData.Bonds.Add(new BondDescription(1, 3, BondDescription.BondType.Single));
             }
-
-            
         }
 
         /// <summary>
@@ -84,9 +86,10 @@ namespace Babylon.Blazor
                 //https://doc.babylonjs.com/
                 try
                 {
+                    Loader.Show();
                     if (_babylonInstance != null)
                     {
-                        _babylonInstance.Dispose();
+                        await _babylonInstance.DisposeAsync();
                         _babylonInstance = null;
                     }
 
@@ -95,6 +98,7 @@ namespace Babylon.Blazor
                     //var scene = await BabylonInstance.CreateTestScene(canvasId);
 
                     await InitializeSzene(BabylonInstance, CanvasId);
+                    await Task.Delay(50);
                 }
                 catch (Exception ex)
                 {
@@ -102,6 +106,16 @@ namespace Babylon.Blazor
                 }
                 finally
                 {
+                    if (IsLoading)
+                    {
+                        IsLoading = false;
+                        Loader.Hide();
+                        //if (_reRender)
+                        //{
+                        //    await InvokeAsync(StateHasChanged);
+                        //}
+                    }
+
                     //it is not the best solution but quickly
                     _reRender = false;
                 }
@@ -111,7 +125,7 @@ namespace Babylon.Blazor
         /// <summary>
         /// Returns a flag to indicate whether the component should render.
         /// </summary>
-        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        /// <returns><c>true</c> if the component should render, <c>false</c> otherwise.</returns>
         protected override bool ShouldRender()
         {
             //Console.WriteLine("*ShouldRender*");
@@ -126,6 +140,14 @@ namespace Babylon.Blazor
         [Parameter]
         public string CanvasId { get; set; } = "babylon-canvas";
 
+        /// <summary>
+        /// Gets or sets the idle rotation speed.
+        /// </summary>
+        /// <value>The idle rotation speed.</value>
+        [Parameter]
+        public double IdleRotationSpeed { get; set; } = 1;
+
+        public bool RecreateControlAfterRefresh { get; set; } = true;
 
         /// <summary>
         /// Gets or sets the scene data.
@@ -134,12 +156,7 @@ namespace Babylon.Blazor
         [Parameter]
         public IData SceneData { get; set; }
 
-        /// <summary>
-        /// Gets or sets the idle rotation speed.
-        /// </summary>
-        /// <value>The idle rotation speed.</value>
-        [Parameter]
-        public double IdleRotationSpeed { get; set; } = 1;
+        public SpinnerСommander Loader { get; } = new SpinnerСommander();
 
         /// <summary>
         /// Gets or sets a value indicating whether [use automatic rotate].
@@ -147,8 +164,6 @@ namespace Babylon.Blazor
         /// <value><c>true</c> if [use automatic rotate]; otherwise, <c>false</c>.</value>
         [Parameter]
         public bool UseAutoRotate { get; set; } = true;
-
-        public bool RecreateControlAfterRefresh { get; set; } = true;
 
         /// <summary>
         /// Gets the babylon instance.
@@ -161,6 +176,8 @@ namespace Babylon.Blazor
                 return _babylonInstance;
             }
         }
+
+        protected bool IsLoading { get; private set; } = true;
 
         [Inject]
         private InstanceCreatorBase instanceCreator { get; set; }
