@@ -156,7 +156,7 @@ namespace Babylon.Blazor
         [Parameter]
         public IData SceneData { get; set; }
 
-        public SpinnerСommander Loader { get; } = new SpinnerСommander();
+        public ShowLoadingСommander? Loader { get; } = new ShowLoadingСommander();
 
         /// <summary>
         /// Gets or sets a value indicating whether [use automatic rotate].

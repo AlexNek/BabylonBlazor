@@ -1,14 +1,21 @@
 ﻿
 @if (_visible)
 {
-    <span>Loading...</span>
+    @if (LoadingTemplate != null)
+    {
+        @LoadingTemplate
+    }
 }
 
 @code {
 #nullable enable
 
     [Parameter]
-    public SpinnerСommander? Model { get; set; }
+    public ShowLoadingСommander? Model { get; set; }
+
+
+    [Parameter]
+    public RenderFragment? LoadingTemplate { get; set; }
 
     private bool _visible = true;
     /// <summary>
@@ -19,12 +26,12 @@
     {
         if (Model != null)
         {
-            Model.SpinnerChanged += OnSpinnerChanged;
+            Model.LoadingChanged += OnLoadingChanged;
         }
         base.OnParametersSet();
     }
 
-    private void OnSpinnerChanged(object? sender, bool visible)
+    private void OnLoadingChanged(object? sender, bool visible)
     {
         if (visible != _visible)
         {

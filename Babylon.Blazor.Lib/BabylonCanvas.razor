@@ -1,10 +1,19 @@
 ﻿@inherits BabylonCanvasBase
 
-
-
 <canvas id=@CanvasId touch-action="none" />
-@*<canvas id="babylon-canvas" touch-action="none"/>*@
 
 @* Canvas position must not be changed *@
-<SimpleSpinner Model="Loader"></SimpleSpinner>
+<ShowLoadingComponent Model="Loader" LoadingTemplate="@LoadingTemplate"></ShowLoadingComponent>
 
+
+@code
+{
+    #nullable enable
+    [Parameter]
+    public RenderFragment? LoadingTemplate { get; set; } = builder =>
+        {
+            builder.OpenElement(0, "span");
+            builder.AddContent(1,"Loading...");
+            builder.CloseElement();
+        };
+}

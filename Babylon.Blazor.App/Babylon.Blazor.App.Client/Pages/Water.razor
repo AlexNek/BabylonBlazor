@@ -12,7 +12,11 @@
     }
 </style>
 <div class="my-component1" style="height: 600px;">
-   <BabylonCanvas CanvasId="Canvas1" SceneData=@PanelData/>
+    <BabylonCanvas CanvasId="Canvas1" SceneData=@PanelData>
+        <LoadingTemplate>
+            <div>Loading Custom Demo...</div>
+        </LoadingTemplate>
+    </BabylonCanvas>
 </div>
 
 @code {
