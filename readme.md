@@ -9,14 +9,17 @@ The library is intended to use for creation of molecules visualization and used 
 
 
 ## Getting Started
+You can find the old version (.NET 5.0 and 6.0 commpatible) on the branch [net50](https://github.com/AlexNek/BabylonBlazor/tree/net50)
+New version supports .NET 8.0 and I use Blazor Web App template with server prerendring for demo purposes.
+
 ### Prerequisites
 
 To create Blazor Apps, install the latest version of Visual Studio with the ASP.NET and web development workload.
-For Blazor WebAssembly you need at least Visual Studio 2019 16.6+.
+For using .Net 8.0 you need at least Visual Studio 2022 17.8+.
 Another alternative would be to use Visual Studio code. Click [here](https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio-code) for more information.
 
 
-Library requires .NET 5 or higher as I use [IJSObjectReference](https://docs.microsoft.com/en-us/dotnet/api/microsoft.jsinterop.ijsobjectreference?view=dotnet-plat-ext-6.0)
+Library used [IJSObjectReference](https://docs.microsoft.com/en-us/dotnet/api/microsoft.jsinterop.ijsobjectreference?view=dotnet-plat-ext-6.0)
 
 
 ### Installing
@@ -39,45 +42,46 @@ dotnet add package Babylon.Blazor
 Using MS VS Manage NuGet Packages  
 Search for `Babylon.Blazor`
 
-Add reference to babylon js library. Add 2 lines into index.html
+Add reference to babylon js library. Add 2 lines (with babylonjs) into app.razor
+You will also need to add a reference to babylonInterop.js.
+
 ```html
 <body>
-    <div id="app">Loading...</div>
-
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-
+    <Routes />
     <script src="https://preview.babylonjs.com/babylon.js"></script>
     <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script type="module" src="_content/Babylon.Blazor/babylonInterop.js"></script>
+    <script src="_framework/blazor.web.js"></script>
 </body>
 ```
 
 Add `InstanceCreator` to **DI**
+*Server Part*
 ```C#
  public class Program
     {
         public static async Task Main(string[] args)
         {
        ...
-            
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-
-            builder.Services.AddTransient(sp => new InstanceCreator(sp.GetService<IJSRuntime>()));
-            await builder.Build().RunAsync();
+           builder.Services.AddTransient<InstanceCreatorBase>(sp => new InstanceCreatorServerSide(sp.GetService<IJSRuntime>()));
+           var app = builder.Build(); 
         }
     }
+```
+
+*Client Part*
+```C#
+builder.Services.AddTransient<InstanceCreatorBase>(sp => new InstanceCreator(sp.GetService<IJSRuntime>()));
+
+await builder.Build().RunAsync();
+
 ```
 
 Add Razor page and replace context to similar code
 ```C#
 @page "/test"
 @using Babylon.Blazor.Chemical
+@rendermode InteractiveAuto
 <h1>Water</h1>
 
 <p> Chemical formula of water is H<sub>2</sub>O</p>
@@ -121,10 +125,10 @@ Add to _Imports.razor
 ### Demo Application
 
 
-For demo application I implemented: Water, Benzene and Epinephrine.
+For demo application I implemented: Water, Benzene, Epinephrine and Sprite example.
 All descriptions was get from [PubChem catalog](https://pubchem.ncbi.nlm.nih.gov/).
 As I not found atom size into description - I not set it. The same is for double and triple bonds - the parallel lines rotation vector mostly oriented along the Y axis. Colors selected automatically from color palette.
-If chemist sees something wrong then tell me, please. My target was to create C# interface to Java script library. Not to draw molecules absolute correctly.
+If chemist sees something wrong then please tell me. My goal was to create a C# interface to a Java Script library. Not to draw molecules absolutely correctly.
 
 Water  H<sub>2</sub>O
 
@@ -139,18 +143,18 @@ Epinephrine C<sub>9</sub>H<sub>13</sub>NO<sub>3</sub>
 ![--Epinephrine pic--](docs/images/epinephrine.png)
 
 
-In addition I draw some tests
+In addition, I draw some tests
 
-Test1
+Test1 (not used anymore)
 
 ![--Test1 pic--](docs/images/test1.png)
 
-Test2 (commented)  
+Test2  
 ![--Test2 pic--](docs/images/test2.png)
 
 ### How it works?
 
-With .NET 5.0 it is possible to transfer objects between Java Script and C# very easily. Call functions from JS object under C# is easy too.
+With .NET 5.0 and above, it is very easy to transfer objects between Java Script and C#. Calling functions from a JS object in C# is also easy.
 
 You can read more in article [Using JS Object References in Blazor WASM to wrap JS libraries](https://blog.elmah.io/using-js-object-references-in-blazor-wasm-to-wrap-js-libraries/)
 
@@ -253,6 +257,6 @@ New features:
 
 If you want to change the library then don't use IIS express by debugging because JS files will be not easy to change.
 
-In some cases you can try to refresh the site from developer mode and disabled cache
+In some cases, you can try to refresh the page from developer mode with the cache disabled.
 
 ![--Sprite sample pic--](docs/images/disable-cache.png)
