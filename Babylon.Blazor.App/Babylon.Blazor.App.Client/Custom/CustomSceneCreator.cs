@@ -75,7 +75,7 @@ namespace BabylonBlazor.App.Client.Custom
             Options boxOptions = new BoxOptions { Height = 2, Width = 5.5, Depth = 0.5, FaceColors = boxColors };
             MeshParameters boxParameters = new MeshParameters(BabylonInstance) { Options = boxOptions };
             await boxParameters.SetPosition(3.7, 0, 0);
-            await scene.CreateBox("Box1", boxParameters);
+            await scene.CreateBox("Box2", boxParameters);
         }
         private async Task AddCylinder(Scene scene, string name, double angle)
         {

@@ -30,16 +30,7 @@
 
         await creator.CreateAsync(this);
     }
-
-    /// <summary>
-    /// Returns a flag to indicate whether the component should render.
-    /// </summary>
-    /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-    protected override bool ShouldRender()
-    {
-        return base.ShouldRender();
-    }
-
+    
     private void OnAnimationFinished(object sender, EventArgs e)
     {
         InvokeAsync(() => { _message = "Animation finished"; StateHasChanged();});
