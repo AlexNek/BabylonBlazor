@@ -4,8 +4,10 @@
 This library packages the well-known 3D library [Babylon.js](https://www.babylonjs.com/) into a Razor component that can be used in a C# Blazor project.
 The library is intended to use for creation of molecules visualization and used limited API of Babylon library.  
 
-[Demo application](https://BabylonBlazorApp202208.azurewebsites.net) - Demo for showing different parts of library 
-[Pubchem Viewer](https://pubchemviewer.azurewebsites.net) - Demo application which used library reference. Show chemical information from `pubchem.ncbi.nlm.nih.gov`
+[Demo application .NET 5.0](https://BabylonBlazorApp202208.azurewebsites.net) - Demo application to show different parts of the library. 
+[Demo application .NET 8.0](https://babylonblazorappnet80.azurewebsites.net) - Demo application to show different parts of the library. 
+
+[Pubchem Viewer](https://pubchemviewer.azurewebsites.net) - Demo application using library reference. Show chemical information from `pubchem.ncbi.nlm.nih.gov`
 
 
 ## Getting Started
@@ -63,11 +65,12 @@ Add `InstanceCreator` to **DI**
         public static async Task Main(string[] args)
         {
        ...
-           builder.Services.AddTransient<InstanceCreatorBase>(sp => new InstanceCreatorServerSide(sp.GetService<IJSRuntime>()));
+           builder.Services.AddTransient<InstanceCreatorBase>(sp => new InstanceCreatorAsyncMode(sp.GetService<IJSRuntime>()));
            var app = builder.Build(); 
         }
     }
 ```
+> **Note** Server side support only `IJSObjectReference`
 
 *Client Part*
 ```C#
@@ -230,12 +233,26 @@ public class MyCustomCanvas : BabylonCanvasBase
 <canvas id=@CanvasId touch-action="none" />
 ```
 ## What's New
-### in Version 1.1
 
-New features:
- - Show errors on 3D canvas
- - Added new component ChemFormulaViewer
- - Expand ChemicalData. Added new properties: ErrorText, MolecularFormula, Name, ShowErrorText
+### in Version 1.4
+ - update to .NET 8.0
+ - added show loading component. As the Babylon engine takes some time to render, we want to show the user a 'loading' notification. The default text is "Loading...". You can change it to something else using 'LoadingTemplate'
+ 
+ ```csharp
+<BabylonCanvas CanvasId="Canvas1" SceneData=@PanelData>
+    <LoadingTemplate>
+        <div>Loading Custom Demo...</div>
+    </LoadingTemplate>
+</BabylonCanvas>
+```
+ 
+### in Version 1.3
+
+ - added sprite manager
+ - added sprite with base attributes
+ - added callback function sample JS to .NET 
+ - added sprite sample  
+ ![--Sprite sample pic--](docs/images/sprites.png)
 
 ### in Version 1.2
 
@@ -244,13 +261,14 @@ New features:
  - added sample of custom scene drawing  
  ![--Custom Draw pic--](docs/images/customdraw.png)
 
-### in Version 1.3
 
- - added sprite manager
- - added sprite with base attributes
- - added callback function sample JS to .NET 
- - added sprite sample  
- ![--Sprite sample pic--](docs/images/sprites.png)
+### in Version 1.1
+
+New features:
+ - Show errors on 3D canvas
+ - Added new component ChemFormulaViewer
+ - Expand ChemicalData. Added new properties: ErrorText, MolecularFormula, Name, ShowErrorText
+
 
 
 ##Developer notes
