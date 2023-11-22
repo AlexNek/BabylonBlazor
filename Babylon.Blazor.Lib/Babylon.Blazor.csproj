@@ -12,10 +12,16 @@ More info on [github](https://github.com/AlexNek/BabylonBlazor)
 </Description>
     <AssemblyName>Babylon.Blazor</AssemblyName>
     <RootNamespace>Babylon.Blazor</RootNamespace>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/AlexNek/BabylonBlazor</RepositoryUrl>
-    <PackageTags>babylon.js blazor net5.0 web</PackageTags>
+    <PackageTags>babylon.js blazor net8.0 web 3d</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Title>Babylon.Blazor</Title>
+    <PackageProjectUrl>https://github.com/AlexNek/BabylonBlazor</PackageProjectUrl>
+    <Copyright>Alex Nek</Copyright>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <AssemblyVersion>1.4.0</AssemblyVersion>
+    <FileVersion>1.4.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Babylon\BabylonFactory.cs" />
@@ -39,6 +45,10 @@ More info on [github](https://github.com/AlexNek/BabylonBlazor)
       <Pack>True</Pack>
       <PackagePath>
       </PackagePath>
+    </None>
+    <None Include="..\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 </Project>
