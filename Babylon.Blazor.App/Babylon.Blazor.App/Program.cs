@@ -16,7 +16,7 @@ namespace BabylonBlazor.App
                 .AddInteractiveServerComponents()
                 .AddInteractiveWebAssemblyComponents();
 
-            builder.Services.AddTransient<InstanceCreatorBase>(sp => new InstanceCreatorServerSide(sp.GetService<IJSRuntime>()));
+            builder.Services.AddTransient<InstanceCreatorBase>(sp => new InstanceCreatorAsyncMode(sp.GetService<IJSRuntime>()));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
