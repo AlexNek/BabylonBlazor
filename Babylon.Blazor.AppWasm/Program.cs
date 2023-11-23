@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
-namespace Babylon.Blazor.AppWasm
+namespace BabylonBlazor.AppWasm
 {
     public class Program
     {
