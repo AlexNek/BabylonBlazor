@@ -1,5 +1,7 @@
+using Babylon.Blazor;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.JSInterop;
 
 namespace BabylonBlazor.AppWasm
 {
@@ -12,6 +14,7 @@ namespace BabylonBlazor.AppWasm
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddTransient<InstanceCreatorBase>(sp => new InstanceCreator(sp.GetService<IJSRuntime>()));
 
             await builder.Build().RunAsync();
         }
