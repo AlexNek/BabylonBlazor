@@ -1,0 +1,132 @@
+﻿@page "/test"
+@using Babylon.Blazor.Chemical
+@rendermode InteractiveAuto
+
+<h1>Drawing test</h1>
+
+<p> No Chemical formula!! Test</p>
+Bond Type:
+
+
+<label>
+    <input type="radio" name="edition" value=@BondDescription.BondType.Single checked="@(bondType == BondDescription.BondType.Single)"  @onchange="RadioSelection"/> Single
+</label>
+<label>
+    <input type="radio" name="edition" value=@BondDescription.BondType.Double checked="@(bondType == BondDescription.BondType.Double)"  @onchange="RadioSelection"/> Double
+</label>
+<label>
+    <input type="radio" name="edition" value=@BondDescription.BondType.Triple checked="@(bondType == BondDescription.BondType.Triple)"  @onchange="RadioSelection" /> Triple
+</label>
+
+
+<div style="height: 600px;">
+    <BabylonCanvas CanvasId="CanvasTest" SceneData=@PanelData/>
+</div>
+
+
+@code {
+
+    ChemicalData PanelData { get; } = new ChemicalData();
+    BondDescription.BondType bondType = BondDescription.BondType.Double;
+    int EditionCode = 1;
+
+    async Task RadioSelection(ChangeEventArgs args)
+    {
+        //EditionCode = int.Parse(args.Value.ToString());
+        Console.WriteLine($"args:{args.Value},{args.Value.GetType()}");
+        //bondType = (BondDescription.BondType)args.Value;
+        bondType = Enum.Parse<BondDescription.BondType>(args.Value.ToString());
+        PanelData.Atoms.Clear();
+        PanelData.Bonds.Clear();
+        await  InitDataAsync();
+        await InvokeAsync(StateHasChanged);
+    }
+
+    async Task InitDataAsync()
+    {
+    // Fake await line
+        await Task.FromResult(1);
+
+        //CreateCube();
+        CreateHexagon();
+    }
+
+    private void CreateHexagon()
+    {
+        PanelData.Atoms.Add(new AtomDescription(0, 2, 0, "1"));
+        PanelData.Atoms.Add(new AtomDescription(1.73, 1, 0, "2"));
+        PanelData.Atoms.Add(new AtomDescription(1.73, -1, 0, "3"));
+        PanelData.Atoms.Add(new AtomDescription(0, -2, 0, "4"));
+        PanelData.Atoms.Add(new AtomDescription(-1.73, -1, 0, "5"));
+        PanelData.Atoms.Add(new AtomDescription(-1.73, 1, 0, "6"));
+
+        PanelData.Atoms.Add(new AtomDescription(0, 0, 0, "7"));
+
+        PanelData.Atoms.Add(new AtomDescription(0, 1, 1.73, "8"));
+        PanelData.Atoms.Add(new AtomDescription(0, -1, 1.73, "9"));
+        PanelData.Atoms.Add(new AtomDescription(0, -1, -1.73, "10"));
+        PanelData.Atoms.Add(new AtomDescription(0, 1, -1.73, "11"));
+
+        PanelData.Bonds.Add(new BondDescription(1, 2, bondType));
+        PanelData.Bonds.Add(new BondDescription(2, 3, bondType));
+        PanelData.Bonds.Add(new BondDescription(3, 4, bondType));
+        PanelData.Bonds.Add(new BondDescription(4, 5, bondType));
+        PanelData.Bonds.Add(new BondDescription(5, 6, bondType));
+        PanelData.Bonds.Add(new BondDescription(6, 1, bondType));
+        PanelData.Bonds.Add(new BondDescription(6, 2, bondType));
+        PanelData.Bonds.Add(new BondDescription(7, 4, bondType));
+      
+        PanelData.Bonds.Add(new BondDescription(1, 8, bondType));
+        PanelData.Bonds.Add(new BondDescription(8, 9, bondType));
+        PanelData.Bonds.Add(new BondDescription(9, 4, bondType));
+        PanelData.Bonds.Add(new BondDescription(4, 10, bondType));
+        PanelData.Bonds.Add(new BondDescription(10, 11, bondType));
+        PanelData.Bonds.Add(new BondDescription(11, 1, bondType));
+        PanelData.Bonds.Add(new BondDescription(11, 8, bondType));
+    }
+
+    private void CreateCube()
+    {
+        PanelData.Atoms.Add(new AtomDescription(-1.01, -1, -1, "1"));
+        PanelData.Atoms.Add(new AtomDescription(-1, 1, -1, "2"));
+        PanelData.Atoms.Add(new AtomDescription(1, 1, -1, "3"));
+        PanelData.Atoms.Add(new AtomDescription(1, -1, -1, "4"));
+        PanelData.Atoms.Add(new AtomDescription(-1, -1, 1, "5"));
+        PanelData.Atoms.Add(new AtomDescription(-1, 1, 1, "6"));
+        PanelData.Atoms.Add(new AtomDescription(1, 1, 1, "7"));
+        PanelData.Atoms.Add(new AtomDescription(1, -1, 1, "8"));
+
+        PanelData.Atoms.Add(new AtomDescription(0, -0, 0, "9"));
+
+        PanelData.Bonds.Add(new BondDescription(1, 2, bondType));
+        PanelData.Bonds.Add(new BondDescription(1, 3, bondType));
+        PanelData.Bonds.Add(new BondDescription(2, 3, bondType));
+        PanelData.Bonds.Add(new BondDescription(3, 4, bondType)); //rights
+        PanelData.Bonds.Add(new BondDescription(4, 1, bondType));
+        PanelData.Bonds.Add(new BondDescription(5, 6, bondType));
+        PanelData.Bonds.Add(new BondDescription(6, 7, bondType));
+        PanelData.Bonds.Add(new BondDescription(7, 8, bondType));
+        PanelData.Bonds.Add(new BondDescription(8, 5, bondType));
+
+        PanelData.Bonds.Add(new BondDescription(1, 5, bondType));
+        PanelData.Bonds.Add(new BondDescription(2, 6, bondType));
+        PanelData.Bonds.Add(new BondDescription(3, 7, bondType));
+        PanelData.Bonds.Add(new BondDescription(4, 8, bondType));
+
+        PanelData.Bonds.Add(new BondDescription(9, 1, bondType));
+        PanelData.Bonds.Add(new BondDescription(9, 2, bondType));
+        PanelData.Bonds.Add(new BondDescription(9, 3, bondType));
+        PanelData.Bonds.Add(new BondDescription(9, 4, bondType));
+        PanelData.Bonds.Add(new BondDescription(9, 5, bondType));
+        PanelData.Bonds.Add(new BondDescription(9, 6, bondType));
+        PanelData.Bonds.Add(new BondDescription(9, 7, bondType));
+        PanelData.Bonds.Add(new BondDescription(9, 8, bondType));
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await InitDataAsync();
+    }
+
+}
+

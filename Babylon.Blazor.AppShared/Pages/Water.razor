@@ -1,0 +1,44 @@
+﻿@page "/water"
+@using Babylon.Blazor.Chemical
+@rendermode InteractiveAuto
+
+<h1>Water</h1>
+
+@*<p> Chemical formula of water is H<sub>2</sub>O</p>*@
+<p> Chemical formula of water is <ChemFormulaViewer FormulaText="H2O"/></p>
+<style>
+    .my-component1 {
+        border: 2px dashed red;
+    }
+</style>
+<div class="my-component1" style="height: 600px;">
+    <BabylonCanvas CanvasId="Canvas1" SceneData=@PanelData>
+        <LoadingTemplate>
+            <div>Loading Custom Demo...</div>
+        </LoadingTemplate>
+    </BabylonCanvas>
+</div>
+
+@code {
+
+    ChemicalData PanelData { get; } = new ChemicalData();
+
+    async Task InitDataAsync()
+    {
+        // Fake await line
+        await Task.FromResult(1);
+
+
+        PanelData.Atoms.Add(new AtomDescription() { Name = "O", X = 2.5369, Y = -0.1550, Z = 0.0000 });
+        PanelData.Atoms.Add(new AtomDescription() { Name = "H", X = 3.0739, Y =  0.1550, Z = 0.0000 });
+        PanelData.Atoms.Add(new AtomDescription() { Name = "H", X = 2.0000, Y =  0.1550, Z = 0.0000 });
+        PanelData.Bonds.Add(new BondDescription(1, 2,  BondDescription.BondType.Single));
+        PanelData.Bonds.Add(new BondDescription(1, 3, BondDescription.BondType.Single));
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await InitDataAsync();
+    }
+
+}
