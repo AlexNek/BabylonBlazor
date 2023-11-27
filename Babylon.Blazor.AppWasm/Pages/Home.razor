@@ -1,9 +1,16 @@
-﻿@page "/home"
+﻿@page "/"
+@inject NavigationManager Navigation
 
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+@code
+{
 
-<Component1></Component1>
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        Navigation.NavigateTo("water");
+    }
+}

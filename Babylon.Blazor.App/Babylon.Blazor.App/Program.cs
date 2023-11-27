@@ -1,6 +1,5 @@
 using Babylon.Blazor;
-using BabylonBlazor.App.Client.Pages;
-
+using BabylonBlazor.AppShared.Pages;
 using Microsoft.JSInterop;
 
 namespace BabylonBlazor.App
