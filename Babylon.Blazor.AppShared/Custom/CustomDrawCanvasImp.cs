@@ -1,6 +1,8 @@
-﻿using Babylon.Blazor;
+﻿
 
-namespace BabylonBlazor.App.Client.Custom
+using Babylon.Blazor;
+
+namespace BabylonBlazor.AppShared.Custom
 {
     public class CustomDrawCanvasImp : BabylonCanvasBase
     {

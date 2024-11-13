@@ -1,4 +1,4 @@
-﻿namespace BabylonBlazor.App.Client.Custom
+﻿namespace BabylonBlazor.AppShared.Custom
 {
     public partial class CustomDrawCanvas
     {

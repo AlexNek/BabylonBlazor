@@ -1,6 +1,6 @@
 ﻿using Babylon.Blazor;
 
-namespace BabylonBlazor.App.Client.Pages
+namespace BabylonBlazor.AppShared.Pages
 {
     public class CustomDrawingData : IData
     {

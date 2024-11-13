@@ -3,7 +3,7 @@ using Babylon.Blazor.Babylon;
 
 using Microsoft.JSInterop;
 
-namespace BabylonBlazor.App.Client.Custom
+namespace BabylonBlazor.AppShared.Custom
 {
     public class SpriteExampleSceneCreator : SceneCreator
     {

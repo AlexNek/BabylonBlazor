@@ -3,15 +3,17 @@
 
 This library packages the well-known 3D library [Babylon.js](https://www.babylonjs.com/) into a Razor component that can be used in a C# Blazor project.
 The library is intended to use for creation of molecules visualization and used limited API of Babylon library.  
+It is possible to compare different types of hosting models:
 
-[Demo application .NET 5.0](https://BabylonBlazorApp202208.azurewebsites.net) - Demo application to show different parts of the library.  
-[Demo application .NET 8.0](https://babylonblazorappnet80.azurewebsites.net) - Demo application to show different parts of the library.  
+- [Demo application .NET 5.0 Wasm](https://BabylonBlazorApp202208.azurewebsites.net) - Demo application to show different parts of the library.  
+- [Demo application .NET 8.0 SSR](https://babylonblazorappnet80.azurewebsites.net) - Demo application to show different parts of the library. *Server side prerendering mode.*  
+- [Demo application .NET 8.0 Wasm](https://babylonblazorwasmnet80.azurewebsites.net) - Demo application to show different parts of the library.  
 
 [Pubchem Viewer](https://pubchemviewer.azurewebsites.net) - Demo application using library reference. Show chemical information from `pubchem.ncbi.nlm.nih.gov`
 
 
 ## Getting Started
-You can find the old version (.NET 5.0 and 6.0 commpatible) on the branch [net50](https://github.com/AlexNek/BabylonBlazor/tree/net50)
+You can find the old version (.NET 5.0 and 6.0 compatible) on the branch [net50](https://github.com/AlexNek/BabylonBlazor/tree/net50)
 New version supports .NET 8.0 and I use Blazor Web App template with server prerendring for demo purposes.
 
 ### Prerequisites
@@ -41,10 +43,9 @@ Using .NET CLI
 dotnet add package Babylon.Blazor
 ```
 
-Using MS VS Manage NuGet Packages  
-Search for `Babylon.Blazor`
+Using MS VS Manage NuGet Packages search for `Babylon.Blazor`
 
-Add reference to babylon js library. Add 2 lines (with babylonjs) into app.razor
+Add reference to babylon js library. Add 2 lines (with babylonjs) into app.razor/index.html
 You will also need to add a reference to babylonInterop.js.
 
 ```html

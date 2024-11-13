@@ -4,7 +4,7 @@ using Babylon.Blazor;
 using Babylon.Blazor.Babylon;
 using Babylon.Blazor.Babylon.Parameters;
 
-namespace BabylonBlazor.App.Client.Custom
+namespace BabylonBlazor.AppShared.Custom
 {
     public class CustomSceneCreator : SceneCreator
     {

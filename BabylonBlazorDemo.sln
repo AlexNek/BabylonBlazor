@@ -17,6 +17,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		appveyor.yml = appveyor.yml
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BabylonBlazor.App.Client", "Babylon.Blazor.App\Babylon.Blazor.App.Client\BabylonBlazor.App.Client.csproj", "{858B6A72-73FF-4D11-B7DC-FB68337B891C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BabylonBlazor.App", "Babylon.Blazor.App\Babylon.Blazor.App\BabylonBlazor.App.csproj", "{B490A5A2-CCCF-4CD9-8DC1-A0E646D9C03C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo Applications", "Demo Applications", "{4F215757-3CB1-455E-97C5-28F553C7F1E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BabylonBlazor.AppShared", "Babylon.Blazor.AppShared\BabylonBlazor.AppShared.csproj", "{D614718C-965A-4992-83DD-78AC73000082}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabylonBlazor.AppWasm", "Babylon.Blazor.AppWasm\BabylonBlazor.AppWasm.csproj", "{FA0FFAA3-D05C-46B6-8726-CD53CCF80CDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,9 +41,31 @@ Global
 		{5E697971-EFE5-445B-B7EF-0BC7C41081B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E697971-EFE5-445B-B7EF-0BC7C41081B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E697971-EFE5-445B-B7EF-0BC7C41081B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858B6A72-73FF-4D11-B7DC-FB68337B891C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858B6A72-73FF-4D11-B7DC-FB68337B891C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858B6A72-73FF-4D11-B7DC-FB68337B891C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858B6A72-73FF-4D11-B7DC-FB68337B891C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B490A5A2-CCCF-4CD9-8DC1-A0E646D9C03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B490A5A2-CCCF-4CD9-8DC1-A0E646D9C03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B490A5A2-CCCF-4CD9-8DC1-A0E646D9C03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B490A5A2-CCCF-4CD9-8DC1-A0E646D9C03C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D614718C-965A-4992-83DD-78AC73000082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D614718C-965A-4992-83DD-78AC73000082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D614718C-965A-4992-83DD-78AC73000082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D614718C-965A-4992-83DD-78AC73000082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA0FFAA3-D05C-46B6-8726-CD53CCF80CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0FFAA3-D05C-46B6-8726-CD53CCF80CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0FFAA3-D05C-46B6-8726-CD53CCF80CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0FFAA3-D05C-46B6-8726-CD53CCF80CDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{858B6A72-73FF-4D11-B7DC-FB68337B891C} = {4F215757-3CB1-455E-97C5-28F553C7F1E4}
+		{B490A5A2-CCCF-4CD9-8DC1-A0E646D9C03C} = {4F215757-3CB1-455E-97C5-28F553C7F1E4}
+		{D614718C-965A-4992-83DD-78AC73000082} = {4F215757-3CB1-455E-97C5-28F553C7F1E4}
+		{FA0FFAA3-D05C-46B6-8726-CD53CCF80CDE} = {4F215757-3CB1-455E-97C5-28F553C7F1E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0593EF6-D593-449F-8D88-8CC1DCADFBD6}
