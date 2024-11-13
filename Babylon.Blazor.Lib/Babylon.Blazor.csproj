@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <PackageId>Babylon.Blazor</PackageId>
     <Authors>Alex Nek</Authors>
     <Company>private</Company>
@@ -38,8 +38,8 @@ More info on [github](https://github.com/AlexNek/BabylonBlazor)
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0" />
-    <PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\LICENSE">
