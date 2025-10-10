@@ -13,13 +13,13 @@ It is possible to compare different types of hosting models:
 
 
 ## Getting Started
-You can find the old version (.NET 5.0 and 6.0 compatible) on the branch [net50](https://github.com/AlexNek/BabylonBlazor/tree/net50)
-New version supports .NET 8.0 and I use Blazor Web App template with server prerendring for demo purposes.
+You can find the old version (.NET 5.0 and 6.0 compatible) on the branch [net50](https://github.com/AlexNek/BabylonBlazor/tree/net50) or use old nuget version
+New version supports .NET 9.0 and I use Blazor Web App template with server prerendring for demo purposes.
 
 ### Prerequisites
 
 To create Blazor Apps, install the latest version of Visual Studio with the ASP.NET and web development workload.
-For using .Net 8.0 you need at least Visual Studio 2022 17.8+.
+For using .Net 9.0 you need at least Visual Studio 2022 17.12+.
 Another alternative would be to use Visual Studio code. Click [here](https://docs.microsoft.com/en-us/aspnet/core/blazor/get-started?view=aspnetcore-3.1&tabs=visual-studio-code) for more information.
 
 
