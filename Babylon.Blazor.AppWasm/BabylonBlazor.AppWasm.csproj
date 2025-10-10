@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Babylon.Blazor" Version="1.4.36" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.0" PrivateAssets="all" />
     <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
@@ -12,6 +13,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Babylon.Blazor.AppShared\BabylonBlazor.AppShared.csproj" />
-    <ProjectReference Include="..\Babylon.Blazor.Lib\Babylon.Blazor.csproj" />
   </ItemGroup>
 </Project>
