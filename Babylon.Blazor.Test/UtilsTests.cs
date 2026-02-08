@@ -17,7 +17,7 @@ namespace Babylon.Blazor.Test
         public void ConvertToFormulaTest1()
         {
             HtmlString result = Utils.ConvertToFormula("H2O");
-            Assert.AreEqual("H<sub>2</sub>O",result.Value);
+            Assert.That(result.Value, Is.EqualTo("H<sub>2</sub>O"));
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -8,9 +8,8 @@
     <SupportedPlatform Include="browser" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.1.1" />
-    <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.3.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Babylon.Blazor.Lib\Babylon.Blazor.csproj" />

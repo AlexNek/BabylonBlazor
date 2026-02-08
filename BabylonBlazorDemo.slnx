@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/Demo/">
+    <Project Path="Babylon.Blazor.App/Babylon.Blazor.App.Client/BabylonBlazor.App.Client.csproj" />
+    <Project Path="Babylon.Blazor.App/Babylon.Blazor.App/BabylonBlazor.App.csproj" />
+    <Project Path="Babylon.Blazor.AppShared/BabylonBlazor.AppShared.csproj" />
+    <Project Path="Babylon.Blazor.AppWasm/BabylonBlazor.AppWasm.csproj" />
+  </Folder>
+  <Folder Name="/Lib/">
+    <Project Path="Babylon.Blazor.Lib/Babylon.Blazor.csproj" />
+  </Folder>
+  <Folder Name="/Soultions Items/">
+    <File Path="LICENSE" />
+    <File Path="readme.md" />
+  </Folder>
+  <Project Path="Babylon.Blazor.Test/Babylon.Blazor.Test.csproj" />
+</Solution>

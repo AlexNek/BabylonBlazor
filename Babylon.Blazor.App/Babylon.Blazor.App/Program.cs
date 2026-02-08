@@ -1,5 +1,5 @@
 using Babylon.Blazor;
-using BabylonBlazor.AppShared.Pages;
+
 using Microsoft.JSInterop;
 
 namespace BabylonBlazor.App
@@ -12,7 +12,6 @@ namespace BabylonBlazor.App
 
             // Add services to the container.
             builder.Services.AddRazorComponents()
-                .AddInteractiveServerComponents()
                 .AddInteractiveWebAssemblyComponents();
 
             builder.Services.AddTransient<InstanceCreatorBase>(sp => new InstanceCreatorAsyncMode(sp.GetService<IJSRuntime>()));
@@ -30,15 +29,17 @@ namespace BabylonBlazor.App
                 app.UseHsts();
             }
 
+            app.UseStatusCodePagesWithReExecute("/not-found", createScopeForStatusCodePages: true);
             app.UseHttpsRedirection();
 
-            app.UseStaticFiles();
             app.UseAntiforgery();
 
-            app.MapRazorComponents<BabylonBlazor.App.Components.App>()
-                .AddInteractiveServerRenderMode()
+            app.MapStaticAssets();
+            app.MapRazorComponents<Components.App>()
                 .AddInteractiveWebAssemblyRenderMode()
-                .AddAdditionalAssemblies(typeof(Water).Assembly);
+                .AddAdditionalAssemblies(
+                    typeof(Client._Imports).Assembly,
+                    typeof(AppShared._Imports).Assembly);
 
             app.Run();
         }

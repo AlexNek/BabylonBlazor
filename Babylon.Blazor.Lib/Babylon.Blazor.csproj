@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <PackageId>Babylon.Blazor</PackageId>
     <Authors>Alex Nek</Authors>
     <Company>private</Company>
@@ -14,14 +14,14 @@ More info on [github](https://github.com/AlexNek/BabylonBlazor)
     <RootNamespace>Babylon.Blazor</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/AlexNek/BabylonBlazor</RepositoryUrl>
-    <PackageTags>babylon.js blazor net8.0 web 3d</PackageTags>
+    <PackageTags>babylon.js blazor net8.0/10.0 web 3d</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Title>Babylon.Blazor</Title>
     <PackageProjectUrl>https://github.com/AlexNek/BabylonBlazor</PackageProjectUrl>
     <Copyright>Alex Nek</Copyright>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <AssemblyVersion>1.4.0</AssemblyVersion>
-    <FileVersion>1.4.0</FileVersion>
+    <AssemblyVersion>1.4.1</AssemblyVersion>
+    <FileVersion>1.4.1</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Babylon\BabylonFactory.cs" />
@@ -33,13 +33,12 @@ More info on [github](https://github.com/AlexNek/BabylonBlazor)
     <SupportedPlatform Include="browser" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GitVersion.MsBuild" Version="5.8.1">
+    <PackageReference Include="GitVersion.MsBuild" Version="6.5.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
-    <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.3.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.2" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\LICENSE">
