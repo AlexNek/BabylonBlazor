@@ -82,6 +82,19 @@ namespace Babylon.Blazor
 
             if (firstRender || _reRender)
             {
+                // Check if JS runtime is available (component must be interactive)
+                if (JS == null)
+                {
+                    System.Diagnostics.Debug.WriteLine("ERROR: IJSRuntime not injected - component is not interactive");
+                    return;
+                }
+
+                if (instanceCreator == null)
+                {
+                    await JS.InvokeVoidAsync("console.log", "ERROR: InstanceCreatorBase not injected");
+                    return;
+                }
+
                 //https://playground.babylonjs.com
                 //https://doc.babylonjs.com/
                 try
@@ -102,7 +115,8 @@ namespace Babylon.Blazor
                 }
                 catch (Exception ex)
                 {
-                    await JS.InvokeVoidAsync("console.log", $"***Exception:{ex}");
+                    await JS.InvokeVoidAsync("console.log", $"***Exception:{ex.Message}");
+                    await JS.InvokeVoidAsync("console.log", $"***Exception Stack:{ex.StackTrace}");
                 }
                 finally
                 {

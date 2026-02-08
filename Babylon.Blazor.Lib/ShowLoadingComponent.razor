@@ -1,5 +1,4 @@
-﻿
-@if (_visible)
+﻿@if (_visible)
 {
     @if (LoadingTemplate != null)
     {
@@ -18,16 +17,27 @@
     public RenderFragment? LoadingTemplate { get; set; }
 
     private bool _visible = true;
+    private ShowLoadingСommander? _previousModel;
+
     /// <summary>
     /// Method invoked when the component has received parameters from its parent in
     /// the render tree, and the incoming values have been assigned to properties.
     /// </summary>
     protected override void OnParametersSet()
     {
-        if (Model != null)
+        // Unsubscribe from previous model if it changed
+        if (_previousModel != null && _previousModel != Model)
+        {
+            _previousModel.LoadingChanged -= OnLoadingChanged;
+        }
+
+        // Subscribe to new model
+        if (Model != null && Model != _previousModel)
         {
             Model.LoadingChanged += OnLoadingChanged;
+            _previousModel = Model;
         }
+        
         base.OnParametersSet();
     }
 
