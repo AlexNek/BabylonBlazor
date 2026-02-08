@@ -235,6 +235,9 @@ public class MyCustomCanvas : BabylonCanvasBase
 ```
 ## What's New
 
+### in Version 1.5.1
+ - update to .NET 10.0
+ 
 ### in Version 1.5
  - update to .NET 9.0
 

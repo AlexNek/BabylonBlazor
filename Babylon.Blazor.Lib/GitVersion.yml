@@ -1,9 +1,11 @@
 assembly-informational-format: '{Major}.{Minor}.{Patch}.{CommitsSinceVersionSource}'
-mode: Mainline
-next-version: 1.4.0
+mode: ContinuousDelivery
+next-version: 1.5.1
 branches:
-  master: {}
-  develop: {}
+  master:
+    regex: ^master$
+  develop:
+    regex: ^develop$
 ignore:
   sha: []
 merge-message-formats: {}
