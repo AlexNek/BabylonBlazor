@@ -107,8 +107,7 @@ namespace Babylon.Blazor
                     }
 
                     //await JS.InvokeVoidAsync("console.log", "***Try create JS babylon instance");
-                    _babylonInstance = await instanceCreator.CreateBabylonAsync();
-                    //var scene = await BabylonInstance.CreateTestScene(canvasId);
+                    _babylonInstance = await instanceCreator.CreateBabylonAsync(CanvasId);
 
                     await InitializeSzene(BabylonInstance, CanvasId);
                     await Task.Delay(50);

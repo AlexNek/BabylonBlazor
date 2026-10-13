@@ -21,17 +21,20 @@ namespace Babylon.Blazor
     {
         private readonly IJSObjectReference _babylonWrapper;
         private readonly IJSRuntime _jSInstance;
+        private readonly string _canvasId;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BabylonInstance"/> class.
         /// </summary>
         /// <param name="jSInstance">The j s instance.</param>
         /// <param name="babylonWrapper">The babylon wrapper.</param>
-        public BabylonInstance(IJSRuntime jSInstance, IJSObjectReference babylonWrapper)
+        /// <param name="canvasId">The canvas identifier.</param>
+        public BabylonInstance(IJSRuntime jSInstance, IJSObjectReference babylonWrapper, string canvasId)
         {
             _jSInstance = jSInstance;
 
             _babylonWrapper = babylonWrapper;
+            _canvasId = canvasId;
         }
 
         /// <summary>
@@ -95,17 +98,6 @@ namespace Babylon.Blazor
         }
 
         /// <summary>
-        /// Creates the test scene.
-        /// </summary>
-        /// <param name="canvasId">The canvas identifier.</param>
-        /// <returns>Scene.</returns>
-        public async Task<Scene> CreateTestScene(string canvasId)
-        {
-            var jsScene = await _babylonWrapper.InvokeAsync<IJSObjectReference>("createTestScene", canvasId);
-            return new Scene(jsScene, _babylonWrapper);
-        }
-
-        /// <summary>
         /// Creates the vector3.
         /// </summary>
         /// <param name="x">The x.</param>
@@ -123,6 +115,22 @@ namespace Babylon.Blazor
         /// </summary>
         public async ValueTask DisposeAsync()
         {
+            try
+            {
+                await _babylonWrapper.InvokeVoidAsync("cleanup", _canvasId);
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    await _jSInstance.InvokeVoidAsync("console.warn", $"BabylonInstance.DisposeAsync cleanup failed: {ex.Message}");
+                }
+                catch
+                {
+                    // swallow — best-effort diagnostic logging
+                }
+            }
+
             if (_babylonWrapper is IJSInProcessObjectReference babylonWrapper)
             {
                 babylonWrapper.Dispose();

@@ -18,14 +18,15 @@ public class InstanceCreatorAsyncMode : InstanceCreatorBase
     /// <summary>
     /// create babylon instance as an asynchronous operation.
     /// </summary>
+    /// <param name="canvasId">The canvas identifier.</param>
     /// <returns>System.Threading.Tasks.Task&lt;Babylon.Blazor.BabylonInstance&gt;.</returns>
-    public override async Task<BabylonInstance> CreateBabylonAsync()
+    public override async Task<BabylonInstance> CreateBabylonAsync(string canvasId)
     {
 
         IJSObjectReference babylonWrapper = await JSInstance.InvokeAsync<IJSObjectReference>(
                                                 "import",
                                                 "./_content/Babylon.Blazor/babylonInterop.js");
 
-        return new(JSInstance, babylonWrapper);
+        return new(JSInstance, babylonWrapper, canvasId);
     }
 }

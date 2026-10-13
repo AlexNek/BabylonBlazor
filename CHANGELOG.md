@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- `BabylonInstance.DisposeAsync()` now stops the render loop, disposes the scene and engine, and removes window resize listeners before releasing the JS module handle. Previously every disposed `BabylonCanvas` leaked live WebGL resources and orphaned event handlers.
+- Removed dead `createTestScene()` JS export and its C# wrapper `BabylonInstance.CreateTestScene()` (contained an undefined variable reference and was never called).
+
 ## [1.5.1] - 2026-02-08
 
 ### Changed

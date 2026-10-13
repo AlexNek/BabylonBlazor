@@ -18,8 +18,9 @@ public abstract class InstanceCreatorBase
     /// <summary>
     /// create babylon as an asynchronous operation.
     /// </summary>
+    /// <param name="canvasId">The canvas identifier.</param>
     /// <returns>System.Threading.Tasks.Task&lt;Babylon.Blazor.BabylonInstance&gt;.</returns>
-    public abstract Task<BabylonInstance> CreateBabylonAsync();
+    public abstract Task<BabylonInstance> CreateBabylonAsync(string canvasId);
 
     /// <summary>
     /// The java script instance
