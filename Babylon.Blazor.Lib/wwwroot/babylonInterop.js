@@ -1,4 +1,8 @@
-﻿export function drawText(canvasId,x,y,text, fontText, colorText) {
+﻿// Module-level cleanup registry keyed by canvasId.
+// Tracks engine, scene, render callback and resize handler so cleanup() can tear them down.
+const _cleanupRegistry = new Map();
+
+export function drawText(canvasId,x,y,text, fontText, colorText) {
     var babylonCanvas = document.getElementById(canvasId);
     var ctx = babylonCanvas.getContext('2d');
     if (colorText) {
@@ -10,43 +14,12 @@
     ctx.fillText(text, x,y);
 }
 
-export function createTestScene(canvasId) {
-    var babylonCanvas = document.getElementById(canvasId);
-    /// <var>The engine</var>
-    var engine = new BABYLON.Engine(babylonCanvas, true);
-
-    engine.runRenderLoop(function () {
-        /// <summary>
-        /// </summary>
-        scene.render();
-    });
-    
-    window.addEventListener("resize", function () {
-        /// <summary>
-        /// </summary>
-        engine.resize();
-    });
-
-    /// <var>The scene</var>
-    var scene = new BABYLON.Scene(engine);
-
-    /// <var>The camera</var>
-    var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, new BABYLON.Vector3(0, 0, 5), scene);
-    camera.attachControl(canvas, true);
-
-    /// <var>The light1</var>
-    var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
-    /// <var>The light2</var>
-    var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
-
-    /// <var>The sphere</var>
-    var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 2 }, scene);
-
-    return scene;
-};
-
 //createEngine
 export function createEngine(canvasId, antialias) {
+    if (_cleanupRegistry.has(canvasId)) {
+        throw new Error("babylonInterop.createEngine: an engine for canvasId '" + canvasId + "' already exists. Dispose it first.");
+    }
+
     var babylonCanvas = document.getElementById(canvasId);
     if (babylonCanvas == null) {
         alert("canvas id '" + canvasId + "' is not found");
@@ -67,7 +40,7 @@ export function createEngine(canvasId, antialias) {
     //console.log(engine, engine.RenderingContext, typeof (engine.id), window.clientWidth, window.cleintHeight);
     //TraceProps("*engine*", engine);
 
-    window.addEventListener("resize", function () {
+    var resizeHandler = function () {
         //console.log("--resize--");
         //console.log(babylonCanvas, typeof (babylonCanvas), babylonCanvas.clientWidth, babylonCanvas.cleintHeight);
         //console.log(canvasParent, typeof (canvasParent), canvasParent.clientWidth, canvasParent.cleintHeight, canvasParent.height);
@@ -77,7 +50,12 @@ export function createEngine(canvasId, antialias) {
         babylonCanvas.width = canvasParent.clientWidth;
         babylonCanvas.height = canvasParent.clientHeight;
         engine.resize();
-    });
+    };
+
+    window.addEventListener("resize", resizeHandler);
+
+    _cleanupRegistry.set(canvasId, { engine: engine, resizeHandler: resizeHandler });
+
     //alert(babylonEngine);
     //TraceProps("*engine*",engine);
     
@@ -89,8 +67,10 @@ export function createEngine(canvasId, antialias) {
 
 export function createScene(engine) {
     //alert(engine);
-   
-    return new BABYLON.Scene(engine);
+    var scene = new BABYLON.Scene(engine);
+    var entry = [..._cleanupRegistry.values()].find(e => e.engine === engine);
+    if (entry) { entry.scene = scene; }
+    return scene;
 }
 
 export function createVector3(x,y,z) {
@@ -265,9 +245,12 @@ export function setMaterialTexture(material, texture) {
 }
 
 export function runRenderLoop (engine, scene) {
-    engine.runRenderLoop(function () {
+    var renderFunc = function () {
         scene.render();
-    });
+    };
+    engine.runRenderLoop(renderFunc);
+    var entry = [..._cleanupRegistry.values()].find(e => e.engine === engine);
+    if (entry) { entry.renderCallback = renderFunc; }
 }
 
 export function createGrid(sizeX, sizeY, step,color) {
@@ -423,6 +406,29 @@ export function setAngle(angle, sprite) {
         console.log(err);
     }
 }
+export function disposeCanvas(canvasId) {
+    var entry = _cleanupRegistry.get(canvasId);
+    if (!entry) return;
+    try {
+        if (entry.renderCallback) {
+            try { entry.engine.stopRenderLoop(entry.renderCallback); }
+            catch (e) { console.warn("babylonInterop.disposeCanvas stopRenderLoop: " + e.message); }
+        }
+        if (entry.scene) {
+            try { entry.scene.dispose(); }
+            catch (e) { console.warn("babylonInterop.disposeCanvas scene.dispose: " + e.message); }
+        }
+        try { entry.engine.dispose(); }
+        catch (e) { console.warn("babylonInterop.disposeCanvas engine.dispose: " + e.message); }
+        if (entry.resizeHandler) {
+            try { window.removeEventListener("resize", entry.resizeHandler); }
+            catch (e) { console.warn("babylonInterop.disposeCanvas removeEventListener: " + e.message); }
+        }
+    } finally {
+        _cleanupRegistry.delete(canvasId);
+    }
+}
+
 export function showWorldAxis(size,scene) {
     var makeTextPlane = function (text, color, size) {
         var dynamicTexture = new BABYLON.DynamicTexture("DynamicTexture", 50, scene, true);

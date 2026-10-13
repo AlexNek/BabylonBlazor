@@ -12,7 +12,7 @@ subclass. The lifecycle is:
 2. **`OnAfterRenderAsync(firstRender)`** — on the first render (or when a re-render
    is requested):
    - Shows the loading indicator.
-   - Calls `InstanceCreatorBase.CreateBabylonAsync()` to get a `BabylonInstance`.
+   - Calls `InstanceCreatorBase.CreateBabylonAsync(string canvasId)` to get a `BabylonInstance`.
    - Calls `InitializeSzene(babylonInstance, canvasId)`.
    - Hides the loading indicator.
 3. **`ShouldRender`** — checks whether the control needs to be recreated after a

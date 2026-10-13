@@ -22,8 +22,9 @@ namespace Babylon.Blazor
         /// create babylon as an asynchronous operation.
         /// TODO: think about better dispose
         /// </summary>
+        /// <param name="canvasId">The canvas identifier.</param>
         /// <returns>System.Threading.Tasks.Task&lt;Babylon.Blazor.BabylonInstance&gt;.</returns>
-        public override async Task<BabylonInstance> CreateBabylonAsync()
+        public override async Task<BabylonInstance> CreateBabylonAsync(string canvasId)
         {
 
 
@@ -31,7 +32,7 @@ namespace Babylon.Blazor
                                                              "import",
                                                              "./_content/Babylon.Blazor/babylonInterop.js");
 
-            return new(JSInstance, babylonWrapper);
+            return new(JSInstance, babylonWrapper, canvasId);
         }
     }
 }

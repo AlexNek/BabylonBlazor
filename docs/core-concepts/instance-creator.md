@@ -19,7 +19,7 @@ The base class holds the `IJSRuntime` reference and declares one abstract method
 public abstract class InstanceCreatorBase
 {
     protected InstanceCreatorBase(IJSRuntime jSInstance) { ... }
-    public abstract Task<BabylonInstance> CreateBabylonAsync();
+    public abstract Task<BabylonInstance> CreateBabylonAsync(string canvasId);
     protected IJSRuntime JSInstance { get; }
 }
 ```

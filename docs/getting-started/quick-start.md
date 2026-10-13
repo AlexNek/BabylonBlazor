@@ -59,7 +59,7 @@ once during `OnInitializedAsync`:
 
 When the component renders:
 
-1. `BabylonCanvas` calls `InstanceCreatorBase.CreateBabylonAsync()` to get a
+1. `BabylonCanvas` calls `InstanceCreatorBase.CreateBabylonAsync(string canvasId)` to get a
    `BabylonInstance` (the C# side of the Babylon.js engine).
 2. The canvas detects that `SceneData` is `ChemicalData` and creates a
    `MoleculeCreator`.
