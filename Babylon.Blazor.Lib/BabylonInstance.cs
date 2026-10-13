@@ -117,7 +117,7 @@ namespace Babylon.Blazor
         {
             try
             {
-                await _babylonWrapper.InvokeVoidAsync("cleanup", _canvasId);
+                await _babylonWrapper.InvokeVoidAsync("disposeCanvas", _canvasId);
             }
             catch (Exception ex)
             {

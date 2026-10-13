@@ -401,24 +401,27 @@ export function setAngle(angle, sprite) {
         console.log(err);
     }
 }
-export function cleanup(canvasId) {
+export function disposeCanvas(canvasId) {
     var entry = _cleanupRegistry.get(canvasId);
     if (!entry) return;
     try {
         if (entry.renderCallback) {
-            entry.engine.stopRenderLoop(entry.renderCallback);
+            try { entry.engine.stopRenderLoop(entry.renderCallback); }
+            catch (e) { console.warn("babylonInterop.disposeCanvas stopRenderLoop: " + e.message); }
         }
         if (entry.scene) {
-            entry.scene.dispose();
+            try { entry.scene.dispose(); }
+            catch (e) { console.warn("babylonInterop.disposeCanvas scene.dispose: " + e.message); }
         }
-        entry.engine.dispose();
+        try { entry.engine.dispose(); }
+        catch (e) { console.warn("babylonInterop.disposeCanvas engine.dispose: " + e.message); }
         if (entry.resizeHandler) {
-            window.removeEventListener("resize", entry.resizeHandler);
+            try { window.removeEventListener("resize", entry.resizeHandler); }
+            catch (e) { console.warn("babylonInterop.disposeCanvas removeEventListener: " + e.message); }
         }
-    } catch (e) {
-        console.warn("babylonInterop.cleanup: " + e.message);
+    } finally {
+        _cleanupRegistry.delete(canvasId);
     }
-    _cleanupRegistry.delete(canvasId);
 }
 
 export function showWorldAxis(size,scene) {
