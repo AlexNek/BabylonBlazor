@@ -14,6 +14,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v7
+      with:
+        # GitVersion.MsBuild refuses to run on a shallow clone and needs the
+        # tag history to resolve the version source.
+        fetch-depth: 0
+        fetch-tags: true
     - name: Setup .NET
       uses: actions/setup-dotnet@v6
       with:
