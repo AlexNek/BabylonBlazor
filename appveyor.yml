@@ -10,6 +10,7 @@ configuration: Release
 
 environment:
   DOTNET_NOLOGO: true
+  IGNORE_NORMALISATION_GIT_HEAD_MOVE: 1
 
 dotnet_csproj:
   patch: true
@@ -56,7 +57,7 @@ notifications:
 - provider: Email
   to:
   - alexnek@russinger.com
-  subject: 'appveyor -Build status: projectName buildVersion'
+  subject: 'appveyor - Build status: {{status}}, project: {{projectName}}, version: {{buildVersion}}'
   on_build_success: true
   on_build_failure: true
   on_build_status_changed: false

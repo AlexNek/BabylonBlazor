@@ -67,6 +67,13 @@ namespace Babylon.Blazor
         /// <returns>Engine.</returns>
         public async Task<Engine> CreateEngine(string canvasId, bool antialias = false)
         {
+            if (canvasId != _canvasId)
+            {
+                throw new ArgumentException(
+                    $"canvasId '{canvasId}' does not match the instance canvasId '{_canvasId}'.",
+                    nameof(canvasId));
+            }
+
             await _jSInstance.InvokeVoidAsync("console.log", $"***CreateEngine {_babylonWrapper}");
             var jsEngine = await _babylonWrapper.InvokeAsync<IJSObjectReference>("createEngine", canvasId, antialias);
             //var jsEngine = await _babylonWrapper.InvokeAsync<IJSObjectReference>("createEngine", "canvasId", true);

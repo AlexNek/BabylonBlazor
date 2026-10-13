@@ -16,6 +16,10 @@ export function drawText(canvasId,x,y,text, fontText, colorText) {
 
 //createEngine
 export function createEngine(canvasId, antialias) {
+    if (_cleanupRegistry.has(canvasId)) {
+        throw new Error("babylonInterop.createEngine: an engine for canvasId '" + canvasId + "' already exists. Dispose it first.");
+    }
+
     var babylonCanvas = document.getElementById(canvasId);
     if (babylonCanvas == null) {
         alert("canvas id '" + canvasId + "' is not found");
@@ -47,6 +51,7 @@ export function createEngine(canvasId, antialias) {
         babylonCanvas.height = canvasParent.clientHeight;
         engine.resize();
     };
+
     window.addEventListener("resize", resizeHandler);
 
     _cleanupRegistry.set(canvasId, { engine: engine, resizeHandler: resizeHandler });
