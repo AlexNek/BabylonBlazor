@@ -2,10 +2,10 @@ name: build
 
 on:
   workflow_dispatch:
-#  push:
-#    branches: [ master ]
-#  pull_request:
-#    branches: [ master ]
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
@@ -13,11 +13,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
+    - uses: actions/checkout@v7
       with:
-        dotnet-version: 5.0.x
+        # GitVersion.MsBuild refuses to run on a shallow clone and needs the
+        # tag history to resolve the version source.
+        fetch-depth: 0
+        fetch-tags: true
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v6
+      with:
+        dotnet-version: 10.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build

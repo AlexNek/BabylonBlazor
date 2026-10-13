@@ -2,6 +2,12 @@
 // Tracks engine, scene, render callback and resize handler so cleanup() can tear them down.
 const _cleanupRegistry = new Map();
 
+// Babylon.js namespace, exported so that C# can call constructors through this module
+// reference (`InvokeConstructorAsync("BABYLON_NS.Color3", ...)`). It is intentionally not
+// named `BABYLON`: a module-scope `BABYLON` binding would shadow the global that the factory
+// functions below read at call time.
+export const BABYLON_NS = window.BABYLON;
+
 export function drawText(canvasId,x,y,text, fontText, colorText) {
     var babylonCanvas = document.getElementById(canvasId);
     var ctx = babylonCanvas.getContext('2d');
@@ -71,19 +77,6 @@ export function createScene(engine) {
     var entry = [..._cleanupRegistry.values()].find(e => e.engine === engine);
     if (entry) { entry.scene = scene; }
     return scene;
-}
-
-export function createVector3(x,y,z) {
-    return new BABYLON.Vector3(x, y, z);
-}
-
-export function createColor3(x, y, z) {
-    return new BABYLON.Color3(x, y, z);
-}
-
-export function createColor4(r, g, b, a) {
-    //alert(r + ", " + g + ", " + b + ", " + a);
-    return new BABYLON.Color4(r, g, b, a);
 }
 
 export function createFaceColors(r, g, b, a) {
@@ -334,13 +327,6 @@ export function сreateSpriteManager(name, url, capacity, width, height, scene) 
 
     //console.log("*createSpriteManager", spriteManager, url, width, height);
     return spriteManager;
-}
-
-export function сreateSprite(name, spriteManager) {
-    var sprite = new BABYLON.Sprite(name, spriteManager);
-
-    //console.log("*сreateSprite", sprite, spriteManager, spriteManager);
-    return sprite;
 }
 
 export function playAnimation(fromKey, toKey, isInLoop, startDelay, onAnimationEndObjectReference, sprite) {

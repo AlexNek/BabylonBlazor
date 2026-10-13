@@ -19,8 +19,8 @@ namespace Babylon.Blazor.Babylon
 
         public async Task<Sprite> CreateSprite(string name)
         {
-            var sprite = await BabylonInstance.InvokeAsync<IJSObjectReference>(
-                             "сreateSprite",
+            var sprite = await BabylonInstance.InvokeConstructorAsync(
+                             JsConstructorNames.Sprite,
                              name,
                              JsObjRef);
             return new Sprite(sprite, BabylonInstance);
