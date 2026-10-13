@@ -1,8 +1,10 @@
 # Babylon.Blazor 
-[![Build status](https://ci.appveyor.com/api/projects/status/c6hl19cdakmoxjiq?svg=true)](https://ci.appveyor.com/project/AlexNek/babylonblazor) [![Publish Status](https://img.shields.io/github/workflow/status/AlexNek/BabylonBlazor/Publish?label=publish)](https://www.nuget.org/packages/BaBylon.Blazor/)  [![NuGet Status](https://img.shields.io/nuget/v/Babylon.Blazor)](https://www.nuget.org/packages/Babylon.Blazor/)
+[![Build status](https://ci.appveyor.com/api/projects/status/c6hl19cdakmoxjiq?svg=true)](https://ci.appveyor.com/project/AlexNek/babylonblazor) [![Publish Status](https://img.shields.io/github/workflow/status/AlexNek/BabylonBlazor/Publish?label=publish)](https://www.nuget.org/packages/BaBylon.Blazor/)  [![NuGet Status](https://img.shields.io/nuget/v/Babylon.Blazor)](https://www.nuget.org/packages/Babylon.Blazor/) [![Docs](https://img.shields.io/badge/docs-developer_manual-blue)](https://alexnek.github.io/BabylonBlazor/) [![Changelog](https://img.shields.io/badge/changelog-history-orange)](CHANGELOG.md)
 
 This library packages the well-known 3D library [Babylon.js](https://www.babylonjs.com/) into a Razor component that can be used in a C# Blazor project.
 The library is intended to use for creation of molecules visualization and used limited API of Babylon library.  
+
+📖 [Developer Manual](https://alexnek.github.io/BabylonBlazor/) — full documentation with installation guide, API reference, and examples.  
 It is possible to compare different types of hosting models:
 
 - [Demo application .NET 5.0 Wasm](https://BabylonBlazorApp202208.azurewebsites.net) - Demo application to show different parts of the library.  
@@ -235,46 +237,7 @@ public class MyCustomCanvas : BabylonCanvasBase
 ```
 ## What's New
 
-### in Version 1.5.1
- - update to .NET 10.0
- 
-### in Version 1.5
- - update to .NET 9.0
-
-### in Version 1.4
- - update to .NET 8.0
- - added show loading component. Currently we use server-side prerendering, but the babylog engine could only work client-side. The Babylon engine takes some time to render. We want to show the user a 'loading' notification instead of an empty area. The default text is "Loading...". You can change it to something else using 'LoadingTemplate'
- 
- ```csharp
-<BabylonCanvas CanvasId="Canvas1" SceneData=@PanelData>
-    <LoadingTemplate>
-        <div>Loading Custom Demo...</div>
-    </LoadingTemplate>
-</BabylonCanvas>
-```
- 
-### in Version 1.3
-
- - added sprite manager
- - added sprite with base attributes
- - added callback function sample JS to .NET 
- - added sprite sample  
- ![--Sprite sample pic--](archive/images/sprites.png)
-
-### in Version 1.2
-
- - added single color Box
- - added Torus
- - added sample of custom scene drawing  
- ![--Custom Draw pic--](archive/images/customdraw.png)
-
-
-### in Version 1.1
-
-New features:
- - Show errors on 3D canvas
- - Added new component ChemFormulaViewer
- - Expand ChemicalData. Added new properties: ErrorText, MolecularFormula, Name, ShowErrorText
+See [CHANGELOG.md](CHANGELOG.md) for the full version history.
 
 
 
