@@ -3,8 +3,9 @@ version: 1.5.1.{build}
 branches:
   only:
   - master
+  # release tags (also matched by the branch filter, so they trigger a build): 1.5.2, v1.5.2
+  - /^[vV]?\d+\.\d+\.\d+$/
 
-skip_tags: true
 image: Visual Studio 2026
 configuration: Release
 
@@ -42,7 +43,10 @@ deploy:
   auth_token:
     secure: F/19bv2TYoeZ5LhzsKZUeVYgpbI53wUcX8RSHE9+T8CD1Q6tXF+3IBU5xe2YyQQx
   artifact: Babylon.BlazorLib
+  tag: $(APPVEYOR_REPO_TAG_NAME)
   force_update: true
+  on:
+    APPVEYOR_REPO_TAG: true
 
 - provider: NuGet
   api_key:
@@ -51,7 +55,7 @@ deploy:
     secure: h6CRIKObf4nhhTABK4DaJA==
   skip_symbols: true
   on:
-    branch: master
+    APPVEYOR_REPO_TAG: true
 
 notifications:
 - provider: Email
