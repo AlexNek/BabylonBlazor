@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- The JS interop layer now calls Babylon.js constructors directly through .NET 10 `InvokeConstructorAsync`: `babylonInterop.js` exports the Babylon.js namespace as `BABYLON_NS`, and `BabylonInstance.CreateVector3`, `CreateColor3`, `CreateColor4`, `CreateGrid` and `SpriteManager.CreateSprite` construct `BABYLON_NS.Vector3`, `.Color3`, `.Color4` and `.Sprite` themselves. The four one-line factory exports (`createVector3`, `createColor3`, `createColor4` and the sprite factory whose name begins with Cyrillic U+0441 instead of ASCII `c`) are removed; the C# method signatures are unchanged, and every factory with real logic (`createEngine`, `createScene`, `createGrid`, the sprite-manager factory, …) keeps its name and behaviour.
+
 ### Fixed
 - `BabylonInstance.DisposeAsync()` now stops the render loop, disposes the scene and engine, and removes window resize listeners before releasing the JS module handle. Each cleanup step has independent error handling so a failure in one step does not prevent the others from executing. Previously every disposed `BabylonCanvas` leaked live WebGL resources and orphaned event handlers.
 - Removed dead `createTestScene()` JS export and its C# wrapper `BabylonInstance.CreateTestScene()` (contained an undefined variable reference and was never called).
