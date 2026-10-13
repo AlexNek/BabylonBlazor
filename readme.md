@@ -239,9 +239,7 @@ public class MyCustomCanvas : BabylonCanvasBase
 
 See [CHANGELOG.md](CHANGELOG.md) for the full version history.
 
-
-
-##Developer notes
+## Developer notes
 
 If you want to change the library then don't use IIS express by debugging because JS files will be not easy to change.
 
