@@ -20,7 +20,7 @@ namespace Babylon.Blazor.Babylon
         public async Task<Sprite> CreateSprite(string name)
         {
             var sprite = await BabylonInstance.InvokeConstructorAsync(
-                             "BABYLON_NS.Sprite",
+                             JsConstructorNames.Sprite,
                              name,
                              JsObjRef);
             return new Sprite(sprite, BabylonInstance);

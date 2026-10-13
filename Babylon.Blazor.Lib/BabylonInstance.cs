@@ -44,14 +44,14 @@ namespace Babylon.Blazor
         /// <returns>Color3.</returns>
         public async Task<Color3> CreateColor3(Color color)
         {
-            var jsColor3 = await _babylonWrapper.InvokeConstructorAsync("BABYLON_NS.Color3", color.R / 255.0, color.G / 255.0, color.B / 255.0);
+            var jsColor3 = await _babylonWrapper.InvokeConstructorAsync(JsConstructorNames.Color3, color.R / 255.0, color.G / 255.0, color.B / 255.0);
             return new Color3(jsColor3);
         }
 
         public async Task<Color4> CreateColor4(Color color)
         {
             var jsColor4 = await _babylonWrapper.InvokeConstructorAsync(
-                               "BABYLON_NS.Color4",
+                               JsConstructorNames.Color4,
                                color.R / 255.0,
                                color.G / 255.0,
                                color.B / 255.0,
@@ -100,7 +100,7 @@ namespace Babylon.Blazor
         /// <param name="color">The color.</param>
         public async Task CreateGrid(double sizeX, double sizeY, double step, Color color)
         {
-            var jsColor3 = await _babylonWrapper.InvokeConstructorAsync("BABYLON_NS.Color3", color.R / 255.0, color.G / 255.0, color.B / 255.0);
+            var jsColor3 = await _babylonWrapper.InvokeConstructorAsync(JsConstructorNames.Color3, color.R / 255.0, color.G / 255.0, color.B / 255.0);
             await _babylonWrapper.InvokeVoidAsync("createGrid", sizeX, sizeY, step, jsColor3);
         }
 
@@ -113,7 +113,7 @@ namespace Babylon.Blazor
         /// <returns>Vector3.</returns>
         public async Task<Vector3> CreateVector3(double x, double y, double z)
         {
-            var jsScene = await _babylonWrapper.InvokeConstructorAsync("BABYLON_NS.Vector3", x, y, z);
+            var jsScene = await _babylonWrapper.InvokeConstructorAsync(JsConstructorNames.Vector3, x, y, z);
             return new Vector3(jsScene);
         }
 
