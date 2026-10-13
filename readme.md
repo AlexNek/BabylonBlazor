@@ -136,25 +136,25 @@ If chemist sees something wrong then please tell me. My goal was to create a C# 
 
 Water  H<sub>2</sub>O
 
-![--water pic--](docs/images/water.png)
+![--water pic--](archive/images/water.png)
 
 Benzene  C<sub>6</sub>H<sub>6</sub>
 
-![--Benzene pic--](docs/images/benzene.png)
+![--Benzene pic--](archive/images/benzene.png)
 
 Epinephrine C<sub>9</sub>H<sub>13</sub>NO<sub>3</sub>
 
-![--Epinephrine pic--](docs/images/epinephrine.png)
+![--Epinephrine pic--](archive/images/epinephrine.png)
 
 
 In addition, I draw some tests
 
 Test1 (not used anymore)
 
-![--Test1 pic--](docs/images/test1.png)
+![--Test1 pic--](archive/images/test1.png)
 
 Test2  
-![--Test2 pic--](docs/images/test2.png)
+![--Test2 pic--](archive/images/test2.png)
 
 ### How it works?
 
@@ -259,14 +259,14 @@ public class MyCustomCanvas : BabylonCanvasBase
  - added sprite with base attributes
  - added callback function sample JS to .NET 
  - added sprite sample  
- ![--Sprite sample pic--](docs/images/sprites.png)
+ ![--Sprite sample pic--](archive/images/sprites.png)
 
 ### in Version 1.2
 
  - added single color Box
  - added Torus
  - added sample of custom scene drawing  
- ![--Custom Draw pic--](docs/images/customdraw.png)
+ ![--Custom Draw pic--](archive/images/customdraw.png)
 
 
 ### in Version 1.1
@@ -284,4 +284,4 @@ If you want to change the library then don't use IIS express by debugging becaus
 
 In some cases, you can try to refresh the page from developer mode with the cache disabled.
 
-![--Sprite sample pic--](docs/images/disable-cache.png)
+![--Sprite sample pic--](archive/images/disable-cache.png)
