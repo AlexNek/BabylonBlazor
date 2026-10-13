@@ -1,12 +1,17 @@
 # Quick Start
 
-You need three things to render a 3D molecule:
+You need three things to render a 3D scene:
 
 1. The NuGet package installed and scripts referenced (see [Installation](installation.md)).
 2. `InstanceCreatorBase` registered in DI.
-3. A Razor page with a `BabylonCanvas` component and a `ChemicalData` object.
+3. A Razor page with a `BabylonCanvas` component and an `IData` object.
 
-## 1. Create the Chemical Data
+The fastest way to see something on screen is to pass a `ChemicalData` object —
+it builds the entire scene (camera, lights, meshes, materials) automatically.
+But `ChemicalData` is just one implementation of `IData`; you can render any 3D
+scene by writing a custom `SceneCreator` (see [Custom Scene](custom-scene.md)).
+
+## 1. Render a Scene with ChemicalData
 
 `ChemicalData` holds a list of atoms (with 3D coordinates) and bonds. Build it
 once during `OnInitializedAsync`:
@@ -60,7 +65,7 @@ When the component renders:
    `MoleculeCreator`.
 3. `MoleculeCreator` builds the scene: camera, lights, spheres for atoms, tubes
    for bonds, and materials with element-name textures.
-4. The render loop starts and the molecule rotates on screen.
+4. The render loop starts and the scene appears on screen.
 
 ## 3. Canvas Parameters
 
@@ -69,7 +74,7 @@ The `BabylonCanvas` component accepts these parameters:
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | `CanvasId` | `string` | `"babylon-canvas"` | Unique HTML id for the `<canvas>` element |
-| `SceneData` | `IData` | — | The data to visualize. Pass `ChemicalData` for molecules |
+| `SceneData` | `IData` | — | The data to visualize. Pass any `IData` implementation — `ChemicalData` for molecules, or your own class for custom scenes |
 | `UseAutoRotate` | `bool` | `true` | Whether the camera auto-rotates around the target |
 | `IdleRotationSpeed` | `double` | `1` | Speed of the auto-rotation |
 | `LoadingTemplate` | `RenderFragment?` | `"Loading..."` | Custom content shown while the engine initializes |
@@ -105,9 +110,40 @@ PanelData.ErrorText = "Failed to load molecule data";
 PanelData.ShowErrorText = true;
 ```
 
+## Beyond Molecules
+
+`ChemicalData` is the quickest way to get a 3D scene running, but the library
+is not limited to molecules. You can render spheres, boxes, cylinders, tori,
+tubes, sprites, and custom materials in any combination.
+
+To build your own scene, create a `SceneCreator` subclass and a custom canvas
+component. See [Custom Scene](custom-scene.md) for a full walkthrough.
+
 ## Demo Output
 
-The demo application renders several test scenes:
+The [SSR demo application](https://babylonblazorappnet80.azurewebsites.net) renders these scenes:
+
+Water (H₂O)
+
+![Water](images/water.png)
+
+Benzene (C₆H₆)
+
+![Benzene](images/benzene.png)
+
+Epinephrine (C₉H₁₃NO₃)
+
+![Epinephrine](images/epinephrine.png)
+
+Sprites
+
+![Sprites](images/sprites.png)
+
+Custom scene (sphere + box)
+
+![Custom scene](images/customdraw.png)
+
+Test scenes
 
 ![Test scene 1](images/test1.png)
 
